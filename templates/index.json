@@ -5,9 +5,51 @@
       "settings": {
         "title": ""
       }
+    },
+    "1633627123b5fd89a6": {
+      "type": "carousel",
+      "settings": {
+        "title": ""
+      }
+    },
+    "16336270333cc4796a": {
+      "type": "half-image-text",
+      "settings": {
+        "title": ""
+      }
+    },
+    "1633627171dc5fbd62": {
+      "type": "steps",
+      "settings": {
+        "title": ""
+      }
+    },
+    "16336271131b421c7f": {
+      "type": "button-full-screen",
+      "settings": {
+        "title": ""
+      }
+    },
+    "163362714757c170f6": {
+      "type": "packages",
+      "settings": {
+        "title": ""
+      }
+    },
+    "1633627159cdd3c0d6": {
+      "type": "quote-image",
+      "settings": {
+        "title": ""
+      }
     }
   },
   "order": [
-    "16333514059df127fe"
+    "16333514059df127fe",
+    "1633627123b5fd89a6",
+    "16336270333cc4796a",
+    "1633627171dc5fbd62",
+    "16336271131b421c7f",
+    "163362714757c170f6",
+    "1633627159cdd3c0d6"
   ]
 }

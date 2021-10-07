@@ -1,0 +1,30 @@
+.carousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 7rem 0rem;
+    flex-direction: column;
+}
+
+.carousel-title {
+    color: #363636;
+    font-weight: lighter;
+    font-size: 18px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.carousel-container{
+    display: flex;
+    width: 100%;
+}
+
+.carousel-image-ctn{
+    width: 300px;
+}
+.carousel-image{
+    width: 270px;
+    margin: 1rem;
+}
