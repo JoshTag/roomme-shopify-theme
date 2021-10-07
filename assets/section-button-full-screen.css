@@ -1,0 +1,22 @@
+.button-full-screen{
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0rem;
+}
+
+.button-fullscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    background-color: #FAF9F7;
+    color: #363636;
+    width: 80%;
+    margin: 2rem 1rem;
+    max-width: 850px;
+    border: 1px solid #363636;
+}

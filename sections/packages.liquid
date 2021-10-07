@@ -1,0 +1,105 @@
+{{ 'section-packages.css' | asset_url | stylesheet_tag }}
+
+<div class="packages">
+    <div class="package-ctn">
+
+    <div class="package-1-outer">
+        <div class="package-1">
+            <div class="package-title-ctn">
+                <p class="package-name">Package 1</p>
+                <div class="package-des">
+                    <p class="package-des">living + 1 bedroom</p>
+                    <p class="package-des">$3099</p>
+                </div>
+            </div>
+
+            <div class="list-des">
+                <p style="font-size: 13px">Includes your choice of:</p>
+                <ul class="package-list">
+                    <div class="package-list-section">
+                        <li class="package-list-item">couch</li>
+                        <li class="package-list-item">coffee table</li>
+                        <li class="package-list-item">area rug</li>
+                    </div>
+                    <div class="package-list-section">
+                        <li class="package-list-item">art work</li>
+                        <li class="package-list-item">floor lamp</li>
+                        <li class="package-list-item">TV stand</li>
+                    </div>
+                    <div class="package-list-section">
+                        <li class="package-list-item">bed</li>
+                        <li class="package-list-item">nightstand</li>
+                        <li class="package-list-item">accents</li>
+                    </div>
+                </ul>
+            </div>
+            <div class="package-expert">
+                <p class="package-bottom-text">+ expert design help</p>
+                <p class="package-bottom-text">+ delivery & installation</p>
+            </div>
+        </div>
+        <div class="package-bottom-ctn">
+            <p class="view-package">view package</p>
+        </div>
+    </div>
+
+        <div class="package-1-outer">
+            <div class="package-1">
+                <div class="package-title-ctn">
+                    <p class="package-name">Package 2</p>
+                    <div class="package-des">
+                        <p class="package-des">living + 2 bedrooms</p>
+                        <p class="package-des">$3399</p>
+                    </div>
+                </div>
+    
+                <div class="list-des">
+                    <p style="font-size: 13px">Includes your choice of:</p>
+                    <ul class="package-list">
+                        <div class="package-list-section">
+                            <li class="package-list-item">couch</li>
+                            <li class="package-list-item">coffee table</li>
+                            <li class="package-list-item">area rug</li>
+                        </div>
+                        <div class="package-list-section">
+                            <li class="package-list-item">art work</li>
+                            <li class="package-list-item">floor lamp</li>
+                            <li class="package-list-item">TV stand</li>
+                        </div>
+                        <div class="package-list-section">
+                            <li class="package-list-item">2 beds</li>
+                            <li class="package-list-item">2 nightstands</li>
+                            <li class="package-list-item">accents</li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="package-expert">
+                    <p class="package-bottom-text">+ expert design help</p>
+                    <p class="package-bottom-text">+ delivery & installation</p>
+                </div>
+            </div>
+            <div class="package-bottom-ctn">
+                <p class="view-package">view package</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Packages",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Packages"
+    }
+  ]
+}
+{% endschema %}

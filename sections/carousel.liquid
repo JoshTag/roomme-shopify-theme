@@ -1,0 +1,45 @@
+{{ 'section-carousel.css' | asset_url | stylesheet_tag }}
+
+<div class="carousel">
+  <div>
+    <h2 class="carousel-title">We take the stress out of <br>furnishing your rental property.</h2>
+  </div>
+
+  <div class="carousel-container">
+    <div class="carousel-image-ctn" >
+      <img class="carousel-image" src="../assets/furniture/BS-003.png"/>
+    </div>
+    <div class="carousel-image-ctn">
+      <img class="carousel-image" src="../assets/furniture/TS-001.png"/>
+    </div>
+    <div class="carousel-image-ctn">
+      <img class="carousel-image" src="../assets/furniture/A-002.png"/>
+    </div>
+    <div class="carousel-image-ctn">
+      <img class="carousel-image" src="../assets/furniture/L-002.png"/>
+    </div>
+    <div class="carousel-image-ctn">
+      <img class="carousel-image" src="../assets/furniture/T-003.png"/>
+    </div>
+  </div>
+
+
+</div>
+
+{% schema %}
+{
+  "name": "Carousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Carousel"
+    }
+  ]
+}
+{% endschema %}

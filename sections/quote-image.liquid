@@ -1,0 +1,30 @@
+{{ 'section-quote-image.css' | asset_url | stylesheet_tag }}
+
+<div class="quote">
+    <div class="quote-ctn">
+        <p class="quote-text">“I put off getting into the short-term rental market for years - 
+            until I found out about Roomme. My property was earning money within a couple of weeks - 
+            and I was getting 5 star reviews!”
+        </p>
+        <p class="quote-name">-Isabel M.</p>
+        <p class="quote-location">Montreal, Quebec</p>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Quote with Image",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quote with Image"
+    }
+  ]
+}
+{% endschema %}

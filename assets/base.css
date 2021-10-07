@@ -1,4 +1,34 @@
+/* Custom Fonts */
+
+@font-face {
+  font-family: "Good Sans";
+  src: url('GTFGoodSansTRIAL-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Good Sans";
+  src: url('GTFGoodSansTRIAL-Light.otf') format('opentype');
+  font-weight: lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Good Sans";
+  src: url('GTFGoodSansTRIAL-Medium.otf') format('opentype');
+  font-weight: medium;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Good Sans";
+  src: url('GTFGoodSansTRIAL-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Color custom properties */
+html {
+  background: #F0EFED
+}
 
 :root,
 .color-background-1 {
