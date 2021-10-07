@@ -1,0 +1,23 @@
+{{ 'section-button-full-screen.css' | asset_url | stylesheet_tag }}
+
+<div class="button-full-screen">
+<div class="button-fullscreen">get started</div>
+</div>
+
+{% schema %}
+{
+  "name": "Button Full Screen",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Button Full Screen"
+    }
+  ]
+}
+{% endschema %}
