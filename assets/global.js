@@ -723,3 +723,35 @@ class VariantRadios extends VariantSelects {
 }
 
 customElements.define('variant-radios', VariantRadios);
+
+// function docReady(fn) {
+//   if (document.readyState === "complete" || document.readyState === "interactive") {
+//       setTimeout(fn, 1);
+//   } else {
+//       document.addEventListener("DOMContentLoaded", fn);
+//   }
+// }
+
+// docReady(function() {
+//   const catalogItem = document.querySelectorAll('.catalog-item-selector');
+//   // console.log(catalogItem);
+//   catalogItem.forEach(item => {
+//     item.addEventListener('change', function() {
+//       // console.log(item.getAttribute('data-furniture-category'), item.getAttribute('data-furniture-code'), item.getAttribute('data-furniture-img'))
+//       let categoryTitle = document.getElementById("order-preview-" + item.getAttribute('data-furniture-category'));
+//       categoryTitle.querySelector('.title').innerHTML = item.getAttribute('data-furniture-code')
+//       // console.log(categoryTitle.querySelector('.title'));
+//     });
+//   })
+
+//   // var elem = document.querySelector('.product-package__order-items');
+//   // var flkty = new Flickity( elem, {
+//   //   // options
+//   //   freeScroll: true,
+//   //   contain: true,
+//   //   // disable previous & next buttons and dots
+//   //   prevNextButtons: false,
+//   //   pageDots: false
+//   // });
+
+// });

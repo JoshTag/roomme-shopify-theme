@@ -2334,3 +2334,17 @@ details-disclosure > details {
     stroke: CanvasText;
   }
 }
+
+/* Flickity Overrides */
+.flickity-prev-next-button {
+  top: 40% !important;
+}
+
+.flickity-button {
+  background: none !important;
+}
+
+.flickity-prev-next-button .flickity-button-icon {
+  width: 40% !important;
+  height: 40% !important;
+}

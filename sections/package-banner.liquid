@@ -1,0 +1,34 @@
+<!-- {{ "section-packages.css" | asset_url | stylesheet_tag }} -->
+
+{% schema %}
+{
+  "name": "Packages banner",
+  "settings": [
+    {
+      "type": "url",
+      "id": "left_url",
+      "label": "Left url"
+    },
+    {
+      "type": "text",
+      "id": "left_label",
+      "label": "Left Label"
+    },
+    {
+      "type": "url",
+      "id": "right_url",
+      "label": "Right url"
+    },
+    {
+      "type": "text",
+      "id": "right_label",
+      "label": "Right Label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Packages banner"
+    }
+  ]
+}
+{% endschema %}

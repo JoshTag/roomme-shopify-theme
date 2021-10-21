@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "package": {
+      "type": "product-package"
+    }
+  },
+  "order": [
+    "package"
+  ]
+}

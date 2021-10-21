@@ -1,0 +1,95 @@
+{{ "section-product-package.css" | asset_url | stylesheet_tag }}
+
+<div class="product-package">
+  <div>Filter</div>
+  {% assign catalog_size = shop.metafields.furniture.category | size %}
+  {% assign categories = shop.metafields.furniture.category | uniq %}
+  {% assign furniture_category = shop.metafields.furniture.category %}
+  <form class="product-package__form" method="post" action="/cart/add">
+    {% for item in categories %}
+      {% include 'catalog-category',
+        category: item,
+        quanity: 'choose 1',
+        arr_size: catalog_size,
+        furniture_category: furniture_category,
+        furniture_furniture_code: shop.metafields.furniture.furniture_code,
+        furniture_image: shop.metafields.furniture.image,
+        furniture_length: shop.metafields.furniture.length,
+        furniture_width: shop.metafields.furniture.width,
+        furniture_height: shop.metafields.furniture.height,
+        furniture_quantity: shop.metafields.furniture.quantity
+      %}
+    {% endfor %}
+
+    <div class="product-package__order-preview">
+      <div class="product-package__order-header">
+        <span>{{ product.title | upcase }} - CHOOSE YOUR ITEMS</span>
+        <div class="product-package__add-to-cart">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+          <input type="submit" value="continue to checkout &#x2192;" class="product-package__add-to-cart-btn" disabled />
+          <p><span id="order-count">0</span>/{{ categories | size }}</p>
+        </div>
+      </div>
+      <div class="product-package__order-carousel"  data-flickity='{ "freeScroll": true, "contain": true, "pageDots": false, "groupCells": 2 }'>
+        {% for category in categories %}
+          <div class="product-package__order-item catalog-item" id="order-preview-{{ category }}">
+            <div class="item-image"></div>
+            <!-- <span class="item-title"></span> -->
+            <span class="item-category">{{ category }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+  const itemSelector = document.querySelectorAll('.catalog-item-selector');
+
+  itemSelector.forEach(item => {
+    item.addEventListener('change', function() {
+      // console.log(item.getAttribute('data-furniture-category'), item.getAttribute('data-furniture-code'), item.getAttribute('data-furniture-img'))
+      let categoryTitle = document.getElementById("order-preview-" + item.getAttribute('data-furniture-category'));
+
+      let bgImage = item.getAttribute('data-furniture-img');
+      categoryTitle.querySelector('.item-category').innerHTML = item.getAttribute('data-furniture-code');
+      categoryTitle.querySelector('.item-image').style.backgroundImage = `url('${bgImage}')`;
+      categoryTitle.setAttribute('data-orders', item.getAttribute('data-furniture-code'));
+
+      let selectedItems = document.querySelectorAll('[data-orders]');
+      document.getElementById('order-count').innerHTML = selectedItems.length;
+      console.log(selectedItems.length.toString(), '{{ categories | size }}')
+      if (selectedItems.length.toString() === '{{ categories | size }}') {
+        console.log('true');
+        document.querySelector('.product-package__add-to-cart-btn').disabled = false;
+      } else {
+        console.log('false');
+      }
+
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Packages",
+  "blocks": [
+    {
+      "type": "sofas",
+      "name": "Sofas",
+      "settings": [
+        {
+          "type": "text",
+          "id": "furniture_code",
+          "label": "Furniture code"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Packages"
+    }
+  ]
+}
+{% endschema %}

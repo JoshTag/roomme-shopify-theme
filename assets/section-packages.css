@@ -6,15 +6,18 @@
 
 .package-ctn{
     display: flex;
+    flex-direction: column;
     width: 90%;
     max-width: 1090px;
     justify-content: center;
     align-items: center;
     margin: 10rem 0rem;
 }
-@media screen and (max-width: 600px){
+@media screen and (min-width: 601px){
     .package-ctn{
+        flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
 
@@ -55,6 +58,7 @@
     font-size: 12pt;
     margin: 0px;
     width: 180px;
+    text-align: right;
 }
 
 .package-list {
@@ -92,6 +96,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 }
 
 .view-package{
@@ -101,4 +106,10 @@
 .package-1-outer{
     width: 100%;
     margin: 1rem;
+}
+@media screen and (min-width: 601px) {
+    .package-1-outer{
+        width: 48%;
+        margin: 1rem 0;
+    }
 }

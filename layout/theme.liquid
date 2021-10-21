@@ -117,6 +117,7 @@
     {%- if settings.predictive_search_enabled -%}
       <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
     {%- endif -%}
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
   </head>
@@ -132,7 +133,9 @@
       {{ content_for_layout }}
     </main>
 
-    {% section 'footer' %}
+    {% unless template == 'product.package' %}
+      {% section 'footer' %}
+    {% endunless %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
@@ -165,5 +168,7 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
   </body>
 </html>
