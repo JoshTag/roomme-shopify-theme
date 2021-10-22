@@ -103,6 +103,14 @@
           font-size: 1.6rem;
         }
       }
+
+      {% if request.page_type == 'index' %}
+        .header-wrapper {
+          background: none !important;
+          background-image: linear-gradient(rgba(255,255,255,.8), rgba(0,0,0,0)) !important;
+          border-bottom: none !important;
+        }
+      {% endif  %}
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}

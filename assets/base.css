@@ -2139,6 +2139,10 @@ details[open] .modal-overlay::after {
 }
 
 /* Header menu drawer */
+.header__icon--menu {
+  z-index: 100;
+}
+
 .header__icon--menu .icon {
   display: block;
   position: absolute;
@@ -2185,7 +2189,9 @@ details[open] > .header__icon--menu .icon-hamburger {
 
 @media screen and (min-width: 990px) {
   .header__inline-menu {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 
   .header--top-center .header__inline-menu {

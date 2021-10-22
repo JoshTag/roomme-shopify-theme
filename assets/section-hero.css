@@ -7,6 +7,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -64px;
+}
+@media screen and (min-width: 990px) {
+  .hero {
+    margin-top: -84px;
+  }
 }
 
 .hero__h1{
