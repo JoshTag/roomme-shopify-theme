@@ -223,3 +223,116 @@
 .product-category__item input:checked ~ .product-category__checkmark {
   background-image: url('./catalog-check.svg');
 }
+
+/* Filters */
+.product-package__filters {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding-left: 41px;;
+}
+
+.product-package__filter-ctn {
+  position: relative;
+  color: rgb(var(--color-foreground));
+}
+
+.product-category__dropdown-btn {
+  display: inline-block;
+}
+
+.product-category__dropdown-btn:hover {
+  cursor: pointer;
+}
+
+.product-category__dropdown-ctn {
+  position: absolute;
+  width: 250px;
+  top: 30px;
+  left: 0px;
+  padding: 10px 30px 20px;
+  border: 1px solid #000000;
+  background-color: #F0EFED;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .3s;
+}
+@media screen and (min-width: 768px) {
+  .product-category__dropdown-ctn {
+    left: 60px;
+  }
+}
+
+.product-category__dropdown-ctn.active {
+  opacity: 1;
+  transform: translateY(0px);
+  z-index: 10000;
+}
+
+.product-category__dropdown-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.product-category__dropdown-btns > span {
+  font-size: 13px;
+}
+
+.product-category__dropdown-btns > span:hover {
+  cursor: pointer;
+}
+
+/* checkbox */
+
+.checkbox {
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-gap: 0.5em;
+  font-size: 15px;
+  color: rgb(var(--color-foreground));
+}
+.checkbox--disabled {
+  color: 959495;
+}
+
+.checkbox__control {
+  display: inline-grid;
+  width: 15px;
+  height: 15px;
+  border: 0.1em solid currentColor;
+}
+
+.checkbox__control svg {
+  transition: transform 0.1s ease-in 25ms;
+  transform: scale(0);
+  transform-origin: bottom left;
+}
+
+.checkbox__input {
+  display: grid;
+  grid-template-areas: "checkbox";
+  margin-top: 6px;
+}
+
+.checkbox__input > * {
+  grid-area: checkbox;
+}
+
+.checkbox__input input {
+  opacity: 0;
+  width: 1em;
+  height: 1em;
+}
+
+.checkbox__input input:focus + .checkbox__control {
+  box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
+}
+
+.checkbox__input input:checked + .checkbox__control svg {
+  transform: scale(1);
+}
+
+.checkbox__input input:disabled + .checkbox__control {
+  color: 959495;
+}

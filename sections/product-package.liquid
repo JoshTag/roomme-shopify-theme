@@ -1,10 +1,35 @@
 {{ "section-product-package.css" | asset_url | stylesheet_tag }}
 
+{% assign catalog_size = shop.metafields.furniture.category | size %}
+{% assign categories = shop.metafields.furniture.category | uniq %}
+{% assign furniture_category = shop.metafields.furniture.category %}
+
 <div class="product-package">
-  <div>Filter</div>
-  {% assign catalog_size = shop.metafields.furniture.category | size %}
-  {% assign categories = shop.metafields.furniture.category | uniq %}
-  {% assign furniture_category = shop.metafields.furniture.category %}
+  <div class="product-package__filters">
+    <div class="product-package__filter-ctn">
+      <span class="product-category__">Filter:</span>
+      <div id="category-dropdown" class="product-category__dropdown-btn">furniture type</div>
+      <div class="product-category__dropdown-ctn">
+        <div class="product-category__dropdown-btns">
+          <span class="product-category__dropdown-close">close</span><span id="filter-reset">reset</span>
+        </div>
+        <div>
+          {% for item in categories %}
+            <label class="checkbox">
+              <span class="checkbox__input">
+                <input type="checkbox" name="furniture-category" value="{{ item }}">
+                <span class="checkbox__control">
+                  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden="true" focusable="false">
+                  <path fill='none' stroke='currentColor' stroke-width='3' d='M1.73 12.91l6.37 6.37L22.79 4.59' /></svg>
+                </span>
+              </span>
+              <span class="radio__label">{{ item }}</span>
+            </label>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
   <form class="product-package__form" method="post" action="/cart/add">
     {% for item in categories %}
       {% include 'catalog-category',
@@ -34,7 +59,6 @@
         {% for category in categories %}
           <div class="product-package__order-item catalog-item" id="order-preview-{{ category }}">
             <div class="item-image"></div>
-            <!-- <span class="item-title"></span> -->
             <span class="item-category">{{ category }}</span>
           </div>
         {% endfor %}
@@ -44,6 +68,7 @@
 </div>
 
 <script>
+  // Package product page form
   const itemSelector = document.querySelectorAll('.catalog-item-selector');
 
   itemSelector.forEach(item => {
@@ -62,12 +87,56 @@
       if (selectedItems.length.toString() === '{{ categories | size }}') {
         console.log('true');
         document.querySelector('.product-package__add-to-cart-btn').disabled = false;
-      } else {
-        console.log('false');
       }
 
     });
   });
+
+  // Product package page filter
+  let categoryDropdown = document.getElementById('category-dropdown');
+  let dropdownContainer = document.querySelector('.product-category__dropdown-ctn');
+  let dropdownClose = document.querySelector('.product-category__dropdown-close');
+
+  console.log(categoryDropdown);
+
+  categoryDropdown.addEventListener('click', function(){
+    if (dropdownContainer.classList.contains('active')) {
+      dropdownContainer.classList.remove('active');
+    } else {
+      dropdownContainer.classList.add('active');
+    }
+  });
+
+  dropdownClose.addEventListener('click', function() {
+    dropdownContainer.classList.remove('active');
+  });
+
+  let filterCheckboxes = document.querySelectorAll('input[name="furniture-category"]');
+
+  filterCheckboxes.forEach((item, _, arr) => {
+    item.addEventListener('change', function(){
+      let checkedBoxes = Array.from(arr).filter(input => input.checked).map(item => item.value);
+      let categories = Array.from(arr).map(item => item.value);
+
+      categories.forEach(cat => {
+        if(checkedBoxes.includes(cat)) {
+          document.querySelector(`[data-catalog-category="${cat}"]`).style.display = "block"
+        } else (
+          document.querySelector(`[data-catalog-category="${cat}"]`).style.display = "none"
+        )
+      })
+
+    });
+  });
+
+  document.getElementById('filter-reset').addEventListener('click', function(){
+    document.querySelectorAll('[data-catalog-category]').forEach(element => {
+      element.style.display = "block"
+    })
+    filterCheckboxes.forEach(item => {
+      item.checked = false
+    })
+  })
 </script>
 
 {% schema %}
