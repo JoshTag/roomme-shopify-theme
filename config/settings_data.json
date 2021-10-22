@@ -5,26 +5,13 @@
     "colors_accent_2": "#334FB4",
     "colors_text": "#121212",
     "colors_outline_button_labels": "#121212",
-    "colors_background_1": "#fafafa",
+    "colors_background_1": "#f0efed",
     "colors_background_2": "#F3F3F3",
     "type_header_font": "assistant_n4",
     "type_body_font": "assistant_n4",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
-        "blocks": {
-          "announcement-bar-0": {
-            "type": "announcement",
-            "settings": {
-              "text": "Welcome to our store",
-              "color_scheme": "background-1",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "announcement-bar-0"
-        ],
         "settings": {
         }
       },
@@ -36,7 +23,7 @@
           "logo_position": "middle-left",
           "menu": "main-menu",
           "show_line_separator": true,
-          "enable_sticky_header": true
+          "enable_sticky_header": false
         }
       },
       "footer": {

@@ -107,10 +107,13 @@
       {% if request.page_type == 'index' %}
         .header-wrapper {
           background: none !important;
-          background-image: linear-gradient(rgba(255,255,255,.8), rgba(0,0,0,0)) !important;
+          background-image: linear-gradient(rgba(255,255,255,.6), rgba(0,0,0,0) 90%) !important;
           border-bottom: none !important;
         }
       {% endif  %}
+      .header-wrapper {
+        border-bottom: none !important;
+      }
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}

@@ -8,6 +8,7 @@
     },
     "1633627123b5fd89a6": {
       "type": "carousel",
+      "disabled": true,
       "settings": {
         "title": ""
       }
@@ -33,6 +34,7 @@
     "163362714757c170f6": {
       "type": "packages",
       "settings": {
+        "package_collection": "packages"
       }
     },
     "1633627159cdd3c0d6": {
