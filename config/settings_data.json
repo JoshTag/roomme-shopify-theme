@@ -61,6 +61,7 @@
       "custom-footer": {
         "type": "custom-footer",
         "settings": {
+          "subheader": "Roome is headquarted in Toronto, Canada",
           "footer_menu": "footer"
         }
       }
