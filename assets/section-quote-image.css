@@ -6,6 +6,8 @@
     display: flex;
     justify-content: flex-end;
     padding: 12rem;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
 }
 
 .quote-ctn{

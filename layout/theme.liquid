@@ -96,6 +96,7 @@
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
+        border: 1px solid #000000;
       }
 
       @media screen and (min-width: 750px) {
@@ -145,7 +146,7 @@
     </main>
 
     {% unless template == 'product.package' %}
-      {% section 'footer' %}
+      {% section 'custom-footer' %}
     {% endunless %}
 
     <ul hidden>

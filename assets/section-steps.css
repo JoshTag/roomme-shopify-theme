@@ -13,8 +13,11 @@
     max-width: 850px;
     padding: 5rem 1rem;
     width: 80%;
-    border-bottom: 1px solid #363636;
     flex-wrap: wrap;
+}
+
+.steps .steps-inner:not(:nth-of-type(last)) {
+    border-bottom: 1px solid #363636;
 }
 
 .steps-inner-mid {

@@ -55,13 +55,15 @@
           <p><span id="order-count">0</span>/{{ categories | size }}</p>
         </div>
       </div>
-      <div class="product-package__order-carousel"  data-flickity='{ "freeScroll": true, "contain": true, "pageDots": false, "groupCells": 2 }'>
-        {% for category in categories %}
-          <div class="product-package__order-item catalog-item" id="order-preview-{{ category }}">
-            <div class="item-image"></div>
-            <span class="item-category">{{ category }}</span>
-          </div>
-        {% endfor %}
+      <div class="product-package__carousel-ctn">
+        <div class="product-package__order-carousel"  data-flickity='{ "freeScroll": true, "contain": true, "pageDots": false, "groupCells": 2 }'>
+          {% for category in categories %}
+            <div class="product-package__order-item catalog-item" id="order-preview-{{ category }}">
+              <div class="item-image"></div>
+              <span class="item-category">{{ category }}</span>
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </form>
