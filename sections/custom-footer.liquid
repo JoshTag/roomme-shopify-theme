@@ -17,7 +17,7 @@
         <span class="h2">{{ shop.name }}</span>
       {%- endif -%}
     </a>
-    <span class="custom-footer__subheader">Roome is headeruted in toronto</span>
+    <span class="custom-footer__subheader">{{ section.settings.subheader }}</span>
   </div>
   <div class="custom-footer__menu">
     <ul class="custom-footer__list">
@@ -34,6 +34,16 @@
 {
   "name": "Custom Footer",
   "settings": [
+    {
+      "id": "logo",
+      "type": "image_picker",
+      "label": "Logo"
+    },
+    {
+      "id": "subheader",
+      "type": "text",
+      "label": "Subheader"
+    },
     {
       "id": "footer_menu",
       "type": "link_list",
