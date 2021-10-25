@@ -1,7 +1,9 @@
 {
   "sections": {
     "package": {
-      "type": "packages"
+      "type": "packages",
+      "settings": {
+      }
     }
   },
   "order": [
