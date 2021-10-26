@@ -1,6 +1,6 @@
 {{ "section-packages.css" | asset_url | stylesheet_tag }}
 
-<div class="packages">
+<div id="package-section" class="packages">
   <div class="package-ctn">
     {% assign products_list = section.settings.package_collection.products  %}
     {% if request.page_type == 'collection' %}
@@ -43,7 +43,7 @@
           </div>
         </div>
         <a href="{{ product.url }}" class="package-bottom-ctn">
-          <p class="view-package">view package</p>
+          <span class="view-package">view package</span>
         </a>
       </div>
     {% endfor %}

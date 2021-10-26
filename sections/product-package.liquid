@@ -3,6 +3,8 @@
 {% assign catalog_size = shop.metafields.furniture.category | size %}
 {% assign categories = shop.metafields.furniture.category | uniq %}
 {% assign furniture_category = shop.metafields.furniture.category %}
+{% assign package_categories = product.metafields.catalog.categories.value %}
+{% assign package_categories_uniq = product.metafields.catalog.categories.value.categories | uniq %}
 
 <div class="product-package">
   <div class="product-package__filters">
@@ -14,16 +16,16 @@
           <span class="product-category__dropdown-close">close</span><span id="filter-reset">reset</span>
         </div>
         <div>
-          {% for item in categories %}
+          {% for item in package_categories %}
             <label class="checkbox">
               <span class="checkbox__input">
-                <input type="checkbox" name="furniture-category" value="{{ item }}">
+                <input type="checkbox" name="furniture-category" value="{{ item.category }}">
                 <span class="checkbox__control">
                   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden="true" focusable="false">
                   <path fill='none' stroke='currentColor' stroke-width='3' d='M1.73 12.91l6.37 6.37L22.79 4.59' /></svg>
                 </span>
               </span>
-              <span class="radio__label">{{ item }}</span>
+              <span class="radio__label">{{ item.category }}</span>
             </label>
           {% endfor %}
         </div>
@@ -31,9 +33,9 @@
     </div>
   </div>
   <form class="product-package__form" method="post" action="/cart/add">
-    {% for item in categories %}
+    {% for item in package_categories %}
       {% include 'catalog-category',
-        category: item,
+        category: item.category,
         quanity: 'choose 1',
         arr_size: catalog_size,
         furniture_category: furniture_category,
@@ -45,24 +47,17 @@
         furniture_quantity: shop.metafields.furniture.quantity
       %}
     {% endfor %}
-
     <div class="product-package__order-preview">
       <div class="product-package__order-header">
         <span>{{ product.title | upcase }} - CHOOSE YOUR ITEMS</span>
         <div class="product-package__add-to-cart">
           <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
           <input type="submit" value="continue to checkout &#x2192;" class="product-package__add-to-cart-btn" disabled />
-          <p><span id="order-count">0</span>/{{ categories | size }}</p>
+          <p><span id="order-count">0</span>/<span id="category-max"></span></p>
         </div>
       </div>
       <div class="product-package__carousel-ctn">
-        <div class="product-package__order-carousel"  data-flickity='{ "freeScroll": true, "contain": true, "pageDots": false, "groupCells": 2 }'>
-          {% for category in categories %}
-            <div class="product-package__order-item catalog-item" id="order-preview-{{ category }}">
-              <div class="item-image"></div>
-              <span class="item-category">{{ category }}</span>
-            </div>
-          {% endfor %}
+        <div class="product-package__order-carousel" >
         </div>
       </div>
     </div>
@@ -70,26 +65,77 @@
 </div>
 
 <script>
+  let categoryCount = document.querySelectorAll('.product-category');
+  document.getElementById('category-max').innerHTML = categoryCount.length;;
+
   // Package product page form
   const itemSelector = document.querySelectorAll('.catalog-item-selector');
 
+
+  let ordersArr = [];
+
   itemSelector.forEach(item => {
     item.addEventListener('change', function() {
-      // console.log(item.getAttribute('data-furniture-category'), item.getAttribute('data-furniture-code'), item.getAttribute('data-furniture-img'))
-      let categoryTitle = document.getElementById("order-preview-" + item.getAttribute('data-furniture-category'));
 
-      let bgImage = item.getAttribute('data-furniture-img');
-      categoryTitle.querySelector('.item-category').innerHTML = item.getAttribute('data-furniture-code');
-      categoryTitle.querySelector('.item-image').style.backgroundImage = `url('${bgImage}')`;
-      categoryTitle.setAttribute('data-orders', item.getAttribute('data-furniture-code'));
+      var flkty = new Flickity('.product-package__order-carousel', {
+        "freeScroll": true,
+        "contain": true,
+        "pageDots": false,
+        "cellAlign": 'left'
+      });
+      flkty.destroy();
 
-      let selectedItems = document.querySelectorAll('[data-orders]');
-      document.getElementById('order-count').innerHTML = selectedItems.length;
-      console.log(selectedItems.length.toString(), '{{ categories | size }}')
-      if (selectedItems.length.toString() === '{{ categories | size }}') {
+      const carouselCtn = document.querySelector('.product-package__order-carousel');
+
+      const createOrderCarousel = function(arr) {
+        carouselCtn.innerHTML = "";
+
+        arr.forEach(order => {
+          let orderItem = document.createElement('div');
+          carouselCtn.append(orderItem);
+          orderItem.classList.add('product-package__order-item');
+
+          let orderImage = document.createElement('img');
+          orderItem.append(orderImage);
+          orderImage.classList.add('item-image');
+          orderImage.setAttribute('src', order.image);
+
+          let orderTitle = document.createElement('span');
+          orderItem.append(orderTitle);
+          orderTitle.classList.add('item-category');
+          orderTitle.innerHTML = order.code;
+        })
+      }
+
+      let currentSelection = {
+        "category": item.getAttribute('data-furniture-category'),
+        "code": item.getAttribute('data-furniture-code'),
+        "image": item.getAttribute('data-furniture-img')
+      }
+
+      if (ordersArr.some(order => order.category === item.getAttribute('data-furniture-category'))) {
+        let index = ordersArr.findIndex(({ category }) => category == currentSelection.category);
+        ordersArr[index] = currentSelection;
+        createOrderCarousel(ordersArr);
+      } else {
+        ordersArr.push(currentSelection);
+        createOrderCarousel(ordersArr);
+      }
+
+
+      var flkty = new Flickity('.product-package__order-carousel', {
+        "freeScroll": true,
+        "contain": true,
+        "pageDots": false,
+        "cellAlign": 'left'
+      });
+
+      if (ordersArr.length === categoryCount.length) {
         console.log('true');
         document.querySelector('.product-package__add-to-cart-btn').disabled = false;
       }
+
+      document.getElementById('order-count').innerHTML = ordersArr.length;
 
     });
   });
@@ -98,8 +144,6 @@
   let categoryDropdown = document.getElementById('category-dropdown');
   let dropdownContainer = document.querySelector('.product-category__dropdown-ctn');
   let dropdownClose = document.querySelector('.product-category__dropdown-close');
-
-  console.log(categoryDropdown);
 
   categoryDropdown.addEventListener('click', function(){
     if (dropdownContainer.classList.contains('active')) {
@@ -120,14 +164,19 @@
       let checkedBoxes = Array.from(arr).filter(input => input.checked).map(item => item.value);
       let categories = Array.from(arr).map(item => item.value);
 
+
+
       categories.forEach(cat => {
         if(checkedBoxes.includes(cat)) {
-          document.querySelector(`[data-catalog-category="${cat}"]`).style.display = "block"
+          document.querySelectorAll(`[data-catalog-category="${cat}"]`).forEach(cat => {
+            cat.style.display = "block"
+          })
         } else (
-          document.querySelector(`[data-catalog-category="${cat}"]`).style.display = "none"
+          document.querySelectorAll(`[data-catalog-category="${cat}"]`).forEach(cat => {
+            cat.style.display = "none"
+          })
         )
       })
-
     });
   });
 

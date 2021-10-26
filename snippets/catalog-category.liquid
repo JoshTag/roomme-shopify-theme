@@ -1,30 +1,34 @@
-<div class="product-category" data-catalog-category="{{ category }}">
-  <div class="product-category__header">
-    <h2>{{ category | upcase }}</h2>
-    <span>{{ quanity }}</span>
+{% for j in (1..item.limit) %}
+  <div class="product-category" data-catalog-category="{{ category }}">
+    <div class="product-category__header">
+      <h2>{{ item.category | upcase }}</h2>
+      <span>{{ quanity }}</span>
+    </div>
+    <div class="product-category__item-ctn">
+      {% for i in (0..arr_size) %}
+        {% if furniture_category[i] == item.category %}
+          <label class="product-category__item" style="background-image: url({{ furniture_image[i] }})">
+            <h3>{{ furniture_furniture_code[i] }} {% if furniture_quantity[i] > "1" %}- set of {{ furniture_quantity[i] }}{% endif %}</h3>
+            <p>
+              {% if furniture_length[i] != blank %}<span>length: {{ furniture_length[i] }} /</span>{% endif %}
+              {% if furniture_width[i] != blank %}<span>width: {{ furniture_width[i] }}</span>{% endif %}
+              {% if furniture_height[i] != blank %}<span>/ height: {{ furniture_height[i] }}</span>{% endif %}
+            </p>
+            <input
+              class="catalog-item-selector"
+              type="radio"
+              data-furniture-category="{{ furniture_category[i] }}{% unless j == 1 %}-{{ j }}{% endunless %}"
+              data-furniture-code="{{ furniture_furniture_code[i] }}"
+              data-furniture-img="{{ furniture_image[i] }}"
+              id="{{ furniture_category[i] }}-{{ furniture_furniture_code[i] }}-{{ j }}"
+              name="properties[{{ furniture_category[i] }} {% unless j == 1 %}{{ j }}{% endunless %}]"
+              value="{{ furniture_furniture_code[i] }}"
+              autocomplete="off"
+              required >
+            <span class="product-category__checkmark"></span>
+          </label>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
-  <div class="product-category__item-ctn">
-    {% for i in (0..arr_size) %}
-      {% if furniture_category[i] == category %}
-        <label class="product-category__item" style="background-image: url({{ furniture_image[i] }})">
-          <h3>{{ furniture_furniture_code[i] }} {% if furniture_quantity[i] > "1" %}- set of {{ furniture_quantity[i] }}{% endif %}</h3>
-          <p>
-            {% if furniture_length[i] != blank %}<span>length: {{ furniture_length[i] }} /</span>{% endif %}
-            {% if furniture_width[i] != blank %}<span>width: {{ furniture_width[i] }}</span>{% endif %}
-            {% if furniture_height[i] != blank %}<span>/ height: {{ furniture_height[i] }}</span>{% endif %}
-          </p>
-          <input
-            class="catalog-item-selector"
-            type="radio"
-            data-furniture-category="{{ furniture_category[i] }}"
-            data-furniture-code="{{ furniture_furniture_code[i] }}"
-            data-furniture-img="{{ furniture_image[i] }}"
-            id="{{ furniture_category[i] }}-{{ furniture_furniture_code[i] }}"
-            name="properties[{{ furniture_category[i] }}]" value="{{ furniture_furniture_code[i] }}"
-            required >
-          <span class="product-category__checkmark"></span>
-        </label>
-      {% endif %}
-    {% endfor %}
-  </div>
-</div>
+{% endfor %}

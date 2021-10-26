@@ -21,6 +21,7 @@
 
 .custom-footer__subheader {
   display: block;
+  font-size: 13px;
 }
 
 .custom-footer__list {
@@ -52,12 +53,12 @@
   .custom-footer__list {
     display: grid;
     grid-template-rows: repeat(2, 50px);
-    grid-template-columns: repeat(auto-fit, 150px);
+    grid-template-columns: repeat(auto-fit, 200px);
     grid-auto-flow: column;
     margin: 0;
   }
   .custom-footer__list {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: lighter;
   }
   .custom-footer__list > li {

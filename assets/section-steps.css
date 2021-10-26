@@ -16,7 +16,7 @@
     flex-wrap: wrap;
 }
 
-.steps .steps-inner:not(:nth-of-type(last)) {
+.steps > .steps-inner:not(:last-of-type) {
     border-bottom: 1px solid #363636;
 }
 
