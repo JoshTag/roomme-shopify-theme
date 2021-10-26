@@ -30,6 +30,8 @@
     {% render 'meta-tags' %}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
     {{ content_for_header }}
 
     {%- liquid
@@ -108,7 +110,7 @@
       {% if request.page_type == 'index' %}
         .header-wrapper {
           background: none !important;
-          background-image: linear-gradient(rgba(255,255,255,.7), rgba(0,0,0,0) 90%) !important;
+          background-image: linear-gradient(rgba(183,161,140,.7), rgba(0,0,0,0) 90%) !important;
           border-bottom: none !important;
         }
       {% endif  %}

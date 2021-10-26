@@ -723,3 +723,57 @@ class VariantRadios extends VariantSelects {
 }
 
 customElements.define('variant-radios', VariantRadios);
+
+const singleElementAOS = function(elem) {
+  const box = gsap.utils.toArray(elem);
+
+  const anim = gsap.fromTo(box, {autoAlpha: 0, y: 40}, {duration: 1.4, autoAlpha: 1, y: 0, ease: Power4.easeOut});
+  ScrollTrigger.create({
+    trigger: box,
+    animation: anim,
+    toggleActions: 'play none none none',
+    once: true,
+    start: "top bottom-=200px"
+  });
+}
+
+const multiElementAOS = function(elemParent, elemChildren) {
+  const textBoxChildren = gsap.utils.toArray(elemChildren);
+  const textBox = gsap.utils.toArray(elemParent);
+
+  textBoxChildren.forEach((box, i) => {
+    const anim = gsap.fromTo(box, {autoAlpha: 0, y: 20}, {duration: 1.4, autoAlpha: 1, y: 0, ease: Power4.easeOut, delay: i * .4});
+    ScrollTrigger.create({
+      trigger: textBox,
+      animation: anim,
+      toggleActions: 'play none none none',
+      once: true,
+      start: "top bottom-=200px"
+    });
+  });
+}
+
+singleElementAOS('.hero__h1')
+singleElementAOS('.button-fullscreen')
+singleElementAOS('.package-1-outer')
+singleElementAOS('.quote-ctn')
+multiElementAOS('.text-box', '.text-box > *')
+multiElementAOS('.steps', '.steps > *')
+
+// const packagesAOS = function() {
+//   const categoryCtn = gsap.utils.toArray('.product-category');
+//   const categoryItems = gsap.utils.toArray('.product-category > .product-category__item-ctn > .product-category__item');
+
+//   categoryItems.forEach((box, i) => {
+//     const anim = gsap.fromTo(box, {autoAlpha: 0}, {duration: .6, autoAlpha: 1, ease: Power4.easeOut, delay: i * .4});
+//     ScrollTrigger.create({
+//       trigger: categoryCtn,
+//       animation: anim,
+//       toggleActions: 'play none none none',
+//       once: true,
+//       start: "top bottom-=200px"
+//     });
+//   });
+// }
+
+// packagesAOS();
