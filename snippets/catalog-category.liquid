@@ -1,34 +1,41 @@
-{% for j in (1..item.limit) %}
-  <div class="product-category" data-catalog-category="{{ category }}">
-    <div class="product-category__header">
-      <h2>{{ item.category | upcase }}</h2>
-      <span>{{ quanity }}</span>
-    </div>
-    <div class="product-category__item-ctn">
-      {% for i in (0..arr_size) %}
-        {% if furniture_category[i] == item.category %}
-          <label class="product-category__item" style="background-image: url({{ furniture_image[i] }})">
-            <h3>{{ furniture_furniture_code[i] }} {% if furniture_quantity[i] > "1" %}- set of {{ furniture_quantity[i] }}{% endif %}</h3>
-            <p>
-              {% if furniture_length[i] != blank %}<span>length: {{ furniture_length[i] }} /</span>{% endif %}
-              {% if furniture_width[i] != blank %}<span>width: {{ furniture_width[i] }}</span>{% endif %}
-              {% if furniture_height[i] != blank %}<span>/ height: {{ furniture_height[i] }}</span>{% endif %}
-            </p>
-            <input
-              class="catalog-item-selector"
-              type="radio"
-              data-furniture-category="{{ furniture_category[i] }}{% unless j == 1 %}-{{ j }}{% endunless %}"
-              data-furniture-code="{{ furniture_furniture_code[i] }}"
-              data-furniture-img="{{ furniture_image[i] }}"
-              id="{{ furniture_category[i] }}-{{ furniture_furniture_code[i] }}-{{ j }}"
-              name="properties[{{ furniture_category[i] }} {% unless j == 1 %}{{ j }}{% endunless %}]"
-              value="{{ furniture_furniture_code[i] }}"
-              autocomplete="off"
-              required >
-            <span class="product-category__checkmark"></span>
-          </label>
-        {% endif %}
-      {% endfor %}
-    </div>
+<div class="product-category" data-catalog-category="{{ item.category }}">
+  <div class="product-category__header">
+    <h2>{{ item.category | upcase }}</h2>
+    <span>choose {{ item.limit }}</span>
   </div>
-{% endfor %}
+  <div
+    class="product-category__item-ctn"
+    data-furniture-category="{{ item.category }}"
+    data-furniture-limit="{{ item.limit }}">
+    {% for i in (0..arr_size) %}
+      {% if furniture_category[i] == category %}
+        <div class="product-category__item"
+          style="background-image: url({{ furniture_image[i] }})"
+          data-select-category="{{ furniture_category[i] }}"
+          data-select-code="{{ furniture_furniture_code[i] }}"
+          data-select-image="{{ furniture_image[i] }}"
+          data-select-limit="{{ item.limit }}">
+          <h3>{{ furniture_furniture_code[i] }} {% if furniture_quantity[i] > "1" %}- set of {{ furniture_quantity[i] }}{% endif %}</h3>
+          <p>
+            {% if furniture_length[i] != blank %}<span>length: {{ furniture_length[i] }} /</span>{% endif %}
+            {% if furniture_width[i] != blank %}<span>width: {{ furniture_width[i] }}</span>{% endif %}
+            {% if furniture_height[i] != blank %}<span>/ height: {{ furniture_height[i] }}</span>{% endif %}
+          </p>
+          <!-- <input
+            class="catalog-item-selector {% if item.limit > 1 %}multiple-select{% endif %}"
+            type="checkbox"
+            id="{{ furniture_category[i] }}-{{ furniture_furniture_code[i] }}"
+            name="properties[{{ furniture_category[i] }}]"
+            value="{{ furniture_furniture_code[i] }}"
+            autocomplete="off"> -->
+          <span class="product-category__checkmark"></span>
+          <div class="product-category__quantity-selector" data-max-value="{{ item.limit }}">
+            <button class="product-category__quantity-selector--subtract" type="button" data-category-subtract="{{ furniture_category[i] }}">-</button>
+            <span class="product-category__quantity" data-value="1">1</span>
+            <button class="product-category__quantity-selector--add" type="button" data-category-add="{{ furniture_category[i] }}">+</button>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

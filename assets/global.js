@@ -759,21 +759,3 @@ singleElementAOS('.package-1-outer')
 singleElementAOS('.quote-ctn')
 multiElementAOS('.text-box', '.text-box > *')
 multiElementAOS('.steps', '.steps > *')
-
-// const packagesAOS = function() {
-//   const categoryCtn = gsap.utils.toArray('.product-category');
-//   const categoryItems = gsap.utils.toArray('.product-category > .product-category__item-ctn > .product-category__item');
-
-//   categoryItems.forEach((box, i) => {
-//     const anim = gsap.fromTo(box, {autoAlpha: 0}, {duration: .6, autoAlpha: 1, ease: Power4.easeOut, delay: i * .4});
-//     ScrollTrigger.create({
-//       trigger: categoryCtn,
-//       animation: anim,
-//       toggleActions: 'play none none none',
-//       once: true,
-//       start: "top bottom-=200px"
-//     });
-//   });
-// }
-
-// packagesAOS();
