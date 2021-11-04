@@ -1,0 +1,16 @@
+{{ "component-order-modal.css" | asset_url | stylesheet_tag }}
+
+<div id="order-modal__background">
+  <div id="order-modal__modal">
+    <button id="order-modal__close">&#x2715</button>
+    <div class="order-modal__content">
+      <h2>REVIEW YOUR ORDER</h2>
+      <div class="order-modal__items-ctn"></div>
+    </div>
+    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+    <div id="product-inputs--visually-hidden">
+
+    </div>
+    <input class="order-modal__checkout" type="submit" value="continue to delivery and checkout &#x2192;" />
+  </div>
+</div>

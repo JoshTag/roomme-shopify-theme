@@ -1,9 +1,14 @@
 window.onload = function () {
   let categoryCount = document.querySelectorAll(".product-category");
-  document.getElementById("category-max").innerHTML = categoryCount.length;
-
   // Package product page form
   const itemSelector = document.querySelectorAll(".catalog-item-selector");
+
+  // Total furniture
+  let dataLimits = document.querySelectorAll('[data-furniture-limit]');
+  let totalFurnitureNeeded = Array.from(dataLimits)
+    .map(item => item.getAttribute('data-furniture-limit'))
+    .reduce((sum, value) => Number(sum) + Number(value), 0);
+  document.getElementById("category-max").innerHTML = totalFurnitureNeeded;
 
   // Category list
   let flktyProductCat = new Flickity(".product-package__category-list", {
@@ -21,26 +26,87 @@ window.onload = function () {
     cellAlign: "left",
   });
 
-  // Item selector
+  // Updates order list
+  let inputContainer = document.getElementById('product-inputs--visually-hidden');
   let updateOrderList = function () {
     let orderList = document.querySelectorAll(".product-category__item.active");
     let ordersArr = Array.from(orderList).map((item) => ({
       category: item.getAttribute("data-select-category"),
       code: item.getAttribute("data-select-code"),
       image: item.getAttribute("data-select-image"),
-      limit: item.getAttribute("data-select-limit"),
+      quantity: item.querySelector('[data-value]').getAttribute("data-value"),
     }));
 
-    // console.log(ordersArr);
+    ordersArr.forEach(order => {
+      // let count = order.quantity > 1 ? ` x ${order.quantity}` : "";
+      let newInput = document.createElement("input");
+      inputContainer.appendChild(newInput);
+      newInput.setAttribute("name", `properties[${order.category} - ${order.code}]`);
+      newInput.type = "text";
+      newInput.value = `${order.quantity}`;
+    })
+
+    let itemImagesReview = document.querySelector('.order-modal__items-ctn');
+    itemImagesReview.innerHTML = "";
+    let itemImage = document.querySelectorAll('.item-image');
+    itemImage.forEach(item => {
+      let imageBlock = document.createElement("div");
+      itemImagesReview.appendChild(imageBlock);
+      imageBlock.style.backgroundImage = item.style.backgroundImage;
+      imageBlock.classList.add('order-modal__item-image');
+
+      console.log(item.style.backgroundImage)
+    })
+
+    console.log(itemImagesReview);
   };
 
+  // Updates furniture counter
+  let updateCounter = function() {
+    let currentCount = document.querySelectorAll('[data-category-filled="true"]');
+    document.getElementById('order-count').innerHTML = currentCount.length;
+
+    // if (currentCount.length === totalFurnitureNeeded) {
+    //   document.querySelector('.product-package__add-to-cart-btn').disabled = false;
+    // } else if (currentCount.length < totalFurnitureNeeded) {
+    //   document.querySelector('.product-package__add-to-cart-btn').disabled = true;
+    // }
+  }
+
+  // Order Review Modal
+  let orderReviewBtn = document.querySelector('.product-package__add-to-cart-btn');
+  let orderReviewModalBG = document.getElementById('order-modal__background');
+  let orderReviewModal = document.getElementById('order-modal__modal');
+
+  orderReviewBtn.addEventListener('click', function () {
+    document.body.style.overflow = 'hidden';
+    orderReviewModalBG.classList.add('active');
+    updateOrderList();
+  })
+
+  orderReviewModalBG.addEventListener('click', function () {
+    document.body.style.overflow = 'unset';
+    orderReviewModalBG.classList.remove('active');
+  })
+
+  orderReviewModal.addEventListener('click', function(e) {
+    e.stopPropagation();
+  })
+
+  document.getElementById('order-modal__close').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.body.style.overflow = 'unset';
+    orderReviewModalBG.classList.remove('active');
+  })
+
+  // Select furniture
   let furnitureCategory = document.querySelectorAll(
     "[data-furniture-category]"
   );
   furnitureCategory.forEach((category) => {
     let furnitureItem = category.querySelectorAll(".product-category__item");
     let categoryLimit = category.getAttribute("data-furniture-limit");
-    
+
     if (categoryLimit > 1) {
       furnitureItem.forEach((furniture) => {
         furniture.addEventListener("click", function (event) {
@@ -81,12 +147,14 @@ window.onload = function () {
             orderSummaryBoxes.forEach((item, index) => {
               let orderImage = item.querySelector('.item-image');
               if (orderImages[index]) {
-                orderImage.style.backgroundImage = `url(${orderImages[index]})`
+                orderImage.style.backgroundImage = `url(${orderImages[index]})`;
+                item.setAttribute('data-category-filled', true);
               } else {
-                orderImage.style.backgroundImage = 'unset'
+                orderImage.style.backgroundImage = 'unset';
+                item.setAttribute('data-category-filled', false);
               }
             })
-
+            updateCounter();
           } else {
             if (
               furnitureSelected.length < categoryLimit &&
@@ -113,13 +181,13 @@ window.onload = function () {
               orderSummaryBoxes.forEach((item, index) => {
                 if (orderImages[index]) {
                   let orderImage = item.querySelector('.item-image');
-                  orderImage.style.backgroundImage = `url(${orderImages[index]})`
+                  orderImage.style.backgroundImage = `url(${orderImages[index]})`;
+                  item.setAttribute('data-category-filled', true);
                 }
               })
-
+              updateCounter();
               }
             }
-          updateOrderList();
         });
       });
     } else {
@@ -139,7 +207,9 @@ window.onload = function () {
             let orderSummaryParent = document.querySelector(`[data-order-summary-category="${currentCategory}"]`);
             let orderBackground = orderSummaryParent.querySelector('.item-image');
             orderBackground.style.backgroundImage = `url(${currentImage})`
-            updateOrderList();
+            orderSummaryParent.setAttribute('data-category-filled', true);
+
+            updateCounter();
           });
         });
       });
@@ -203,9 +273,11 @@ window.onload = function () {
         orderSummaryBoxes.forEach((item, index) => {
           if (orderImages[index]) {
             let orderImage = item.querySelector('.item-image');
-            orderImage.style.backgroundImage = `url(${orderImages[index]})`
+            orderImage.style.backgroundImage = `url(${orderImages[index]})`;
+            item.setAttribute('data-category-filled', true);
           }
         })
+        updateCounter();
       }
     });
 
@@ -242,8 +314,10 @@ window.onload = function () {
             orderImage.style.backgroundImage = `url(${orderImages[index]})`
           } else {
             orderImage.style.backgroundImage = 'unset'
+            item.setAttribute('data-category-filled', false);
           }
         })
+        updateCounter();
       }
     });
   });

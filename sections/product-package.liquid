@@ -38,8 +38,8 @@
       <div class="product-package__order-header">
         <span>{{ product.title | upcase }} - CHOOSE YOUR ITEMS</span>
         <div class="product-package__add-to-cart">
-          <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-          <input type="submit" value="continue to checkout &#x2192;" class="product-package__add-to-cart-btn" />
+          <!-- <input type="hidden" name="id" value="{{ product.variants.first.id }}" /> -->
+          <button type="button" class="product-package__add-to-cart-btn" >Review</button>
           <p><span id="order-count">0</span>/<span id="category-max"></span></p>
         </div>
       </div>
@@ -59,6 +59,7 @@
         </div>
       </div>
     </div>
+    {% render 'order-modal' %}
   </form>
 </div>
 

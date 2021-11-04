@@ -2343,7 +2343,7 @@ details-disclosure > details {
 
 /* Flickity Overrides */
 .flickity-prev-next-button {
-  top: 40% !important;
+  top: 50% !important;
 }
 
 .flickity-button {

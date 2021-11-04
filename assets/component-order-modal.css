@@ -1,0 +1,118 @@
+#order-modal__background {
+  display: none;
+  opacity: 0;
+}
+
+#order-modal__background.active {
+  display: block;
+  opacity: 1;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+}
+
+#order-modal__modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #F0EFED;
+  height: 95%;
+  width: 95%;
+  max-width: 850px;
+  z-index: 10001;
+  border: 1px solid #000000;
+  padding: 20px 10px;
+}
+@media screen and (min-width: 1024px) {
+  #order-modal__modal {
+    height: 80%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #order-modal__modal {
+    padding: 30px;
+  }
+}
+
+#order-modal__close {
+  margin-left: auto;
+  border: none;
+  padding: 0;
+  height: 20px;
+  width: 20px;
+  font-size: 20px;
+}
+#order-modal__close:hover {
+  cursor: pointer;
+}
+
+.order-modal__content {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+}
+
+.order-modal__items-ctn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+  border: 1px solid #000000;
+  overflow-y: auto;
+}
+
+.order-modal__item-image {
+  display: block !important;
+  flex-shrink: 0;
+  width: 50%;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+@media screen and (min-width: 768px) {
+  .order-modal__item-image {
+    width: 33.3333%
+  }
+}
+@media screen and (min-width: 1024px) {
+  .order-modal__item-image {
+    width: 25%;
+  }
+}
+
+.order-modal__content > h2 {
+  text-align: center;
+  font-weight: 400;
+  color: rgba(var(--color-foreground), 0.75);
+  margin: 10px 0 50px;
+  letter-spacing: 0;
+}
+
+#product-inputs--visually-hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.order-modal__checkout {
+  margin-top: 20px;
+  margin-left: auto;
+  color: rgba(var(--color-foreground), 0.75);
+  font-size: 17px;
+  width: fit-content;
+  border: none;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.order-modal__checkout:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
