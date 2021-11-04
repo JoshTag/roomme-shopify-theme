@@ -31,10 +31,8 @@ window.onload = function () {
       limit: item.getAttribute("data-select-limit"),
     }));
 
-    console.log(ordersArr);
+    // console.log(ordersArr);
   };
-
-  // Update order summary bottom bar
 
   let furnitureCategory = document.querySelectorAll(
     "[data-furniture-category]"
@@ -42,11 +40,10 @@ window.onload = function () {
   furnitureCategory.forEach((category) => {
     let furnitureItem = category.querySelectorAll(".product-category__item");
     let categoryLimit = category.getAttribute("data-furniture-limit");
-
+    
     if (categoryLimit > 1) {
       furnitureItem.forEach((furniture) => {
         furniture.addEventListener("click", function (event) {
-          // console.log(event.target.querySelectorAll('.product-category__quantity-selector'));
           let furnitureSelected = category.querySelectorAll(
             ".product-category__item.active"
           );
@@ -67,6 +64,29 @@ window.onload = function () {
               .querySelector("[data-value]")
               .setAttribute("data-value", "1");
             event.target.querySelector("[data-value]").innerHTML = 1;
+
+            // Order summary update
+            let parentElem = category.querySelectorAll('.product-category__item.active');
+            let selectedFurniture = Array.from(parentElem).map(selected => ({
+              category: selected.getAttribute('data-select-category'),
+              image: selected.getAttribute('data-select-image'),
+              quantity: selected.querySelector('[data-value]').getAttribute('data-value')
+            }))
+            let currentCategory = category.getAttribute('data-furniture-category');
+            let orderImages = [];
+            selectedFurniture.forEach(item => {
+              [...Array(Number(item.quantity))].forEach(() => orderImages.push(item.image));
+            })
+            let orderSummaryBoxes = document.querySelectorAll(`[data-order-summary-category="${currentCategory}"]`);
+            orderSummaryBoxes.forEach((item, index) => {
+              let orderImage = item.querySelector('.item-image');
+              if (orderImages[index]) {
+                orderImage.style.backgroundImage = `url(${orderImages[index]})`
+              } else {
+                orderImage.style.backgroundImage = 'unset'
+              }
+            })
+
           } else {
             if (
               furnitureSelected.length < categoryLimit &&
@@ -76,14 +96,35 @@ window.onload = function () {
               event.target
                 .querySelector(".product-category__quantity-selector")
                 .classList.add("active");
+
+              // Order summary update
+              let parentElem = category.querySelectorAll('.product-category__item.active');
+              let selectedFurniture = Array.from(parentElem).map(selected => ({
+                category: selected.getAttribute('data-select-category'),
+                image: selected.getAttribute('data-select-image'),
+                quantity: selected.querySelector('[data-value]').getAttribute('data-value')
+              }))
+              let currentCategory = category.getAttribute('data-furniture-category');
+              let orderImages = [];
+              selectedFurniture.forEach(item => {
+                [...Array(Number(item.quantity))].forEach(() => orderImages.push(item.image));
+              })
+              let orderSummaryBoxes = document.querySelectorAll(`[data-order-summary-category="${currentCategory}"]`);
+              orderSummaryBoxes.forEach((item, index) => {
+                if (orderImages[index]) {
+                  let orderImage = item.querySelector('.item-image');
+                  orderImage.style.backgroundImage = `url(${orderImages[index]})`
+                }
+              })
+
+              }
             }
-          }
           updateOrderList();
         });
       });
     } else {
       furnitureItem.forEach((furniture) => {
-        furniture.addEventListener("click", function () {
+        furniture.addEventListener("click", function (event) {
           let selectActive = new Promise((res, rej) => {
             furnitureItem.forEach((item, i, arr) => {
               item.classList.remove("active");
@@ -92,6 +133,12 @@ window.onload = function () {
           });
           selectActive.then(() => {
             furniture.classList.add("active");
+            // Select furniture to image
+            let currentImage = event.target.getAttribute('data-select-image');
+            let currentCategory = event.target.getAttribute('data-select-category');
+            let orderSummaryParent = document.querySelector(`[data-order-summary-category="${currentCategory}"]`);
+            let orderBackground = orderSummaryParent.querySelector('.item-image');
+            orderBackground.style.backgroundImage = `url(${currentImage})`
             updateOrderList();
           });
         });
@@ -132,9 +179,6 @@ window.onload = function () {
             .getAttribute("data-value")
         )
         .reduce((sum, value) => Number(sum) + Number(value), 0);
-      console.log(currentlySelectedCount);
-
-      console.log("up");
       if (
         quantity.getAttribute("data-value") < limit &&
         currentlySelectedCount < limit
@@ -142,15 +186,64 @@ window.onload = function () {
         quantity.dataset.value =
           Number(quantity.getAttribute("data-value")) + 1;
         quantity.innerHTML = Number(quantity.getAttribute("data-value"));
+
+        // Order summary update
+        let selectedFurniture = Array.from(furnitureSelected).map(selected => ({
+          category: selected.getAttribute('data-select-category'),
+          image: selected.getAttribute('data-select-image'),
+          quantity: selected.querySelector('[data-value]').getAttribute('data-value')
+        }))
+
+        let orderImages = []
+        selectedFurniture.forEach(item => {
+          [...Array(Number(item.quantity))].forEach(() => orderImages.push(item.image));
+        })
+
+        let orderSummaryBoxes = document.querySelectorAll(`[data-order-summary-category="${btnCategory}"]`);
+        orderSummaryBoxes.forEach((item, index) => {
+          if (orderImages[index]) {
+            let orderImage = item.querySelector('.item-image');
+            orderImage.style.backgroundImage = `url(${orderImages[index]})`
+          }
+        })
       }
     });
+
     subtractQuantity.addEventListener("click", function (event) {
       event.stopPropagation();
-      console.log("down");
       if (quantity.getAttribute("data-value") != 1) {
         quantity.dataset.value =
           Number(quantity.getAttribute("data-value")) - 1;
         quantity.innerHTML = Number(quantity.getAttribute("data-value"));
+
+        // Order summary update
+        let btnCategory = event.target.getAttribute("data-category-subtract");
+        let parentElem = document.querySelector(
+          `[data-furniture-category=${btnCategory}]`
+        );
+        let furnitureSelected = parentElem.querySelectorAll(
+          ".product-category__item.active"
+        );
+        let selectedFurniture = Array.from(furnitureSelected).map(selected => ({
+          category: selected.getAttribute('data-select-category'),
+          image: selected.getAttribute('data-select-image'),
+          quantity: selected.querySelector('[data-value]').getAttribute('data-value')
+        }))
+
+        let orderImages = []
+        selectedFurniture.forEach(item => {
+          [...Array(Number(item.quantity))].forEach(() => orderImages.push(item.image));
+        })
+
+        let orderSummaryBoxes = document.querySelectorAll(`[data-order-summary-category="${btnCategory}"]`);
+        orderSummaryBoxes.forEach((item, index) => {
+          let orderImage = item.querySelector('.item-image');
+          if (orderImages[index]) {
+            orderImage.style.backgroundImage = `url(${orderImages[index]})`
+          } else {
+            orderImage.style.backgroundImage = 'unset'
+          }
+        })
       }
     });
   });

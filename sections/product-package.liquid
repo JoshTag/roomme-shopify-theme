@@ -46,10 +46,15 @@
       <div class="product-package__carousel-ctn">
         <div class="product-package__order-carousel">
           {% for item in package_categories %}
-            <div class="product-package__order-item">
-              <img class="item-image"/>
-              <span class="item-category">{{ item.category }}</span>
-            </div>
+            {% for i in (1..item.limit) %}
+              <div
+                class="product-package__order-item"
+                data-order-summary-category="{{ item.category }}"
+                data-order-summary-count="{{ item.limit }}">
+                <div class="item-image"></div>
+                <span class="item-category">{{ item.category }}</span>
+              </div>
+            {% endfor %}
           {% endfor %}
         </div>
       </div>

@@ -21,13 +21,6 @@
             {% if furniture_width[i] != blank %}<span>width: {{ furniture_width[i] }}</span>{% endif %}
             {% if furniture_height[i] != blank %}<span>/ height: {{ furniture_height[i] }}</span>{% endif %}
           </p>
-          <!-- <input
-            class="catalog-item-selector {% if item.limit > 1 %}multiple-select{% endif %}"
-            type="checkbox"
-            id="{{ furniture_category[i] }}-{{ furniture_furniture_code[i] }}"
-            name="properties[{{ furniture_category[i] }}]"
-            value="{{ furniture_furniture_code[i] }}"
-            autocomplete="off"> -->
           <span class="product-category__checkmark"></span>
           <div class="product-category__quantity-selector" data-max-value="{{ item.limit }}">
             <button class="product-category__quantity-selector--subtract" type="button" data-category-subtract="{{ furniture_category[i] }}">-</button>
