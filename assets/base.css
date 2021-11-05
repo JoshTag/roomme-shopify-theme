@@ -2080,7 +2080,7 @@ details[open] .modal-overlay {
 details[open] .modal-overlay::after {
   position: absolute;
   content: '';
-  background-color: rgb(var(--color-foreground), 0.5);
+  background-color: rgb(var(--color-foreground), 0.9);
   top: 100%;
   left: 0;
   right: 0;
@@ -2223,22 +2223,29 @@ details[open] > .header__icon--menu .icon-hamburger {
 
 .header__menu-item span {
   transition: text-decoration var(--duration-short) ease;
+  position: relative;
+  text-decoration-thickness: 2px;
 }
 
-.header__menu-item:hover span {
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+.header__menu-item > span:before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: rgb(var(--color-foreground));
+  transition: 0.3s;
+}
+
+.header__menu-item:hover > span:before {
+  width: 100%;
 }
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
   color: rgb(var(--color-foreground));
   text-decoration: underline;
-  text-underline-offset: 0.3rem;
-}
-
-.header__menu-item:hover .header__active-menu-item {
-  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 0.5rem;
 }
 
 .header__submenu {

@@ -1,12 +1,8 @@
 window.onload = function () {
-  let categoryCount = document.querySelectorAll(".product-category");
-  // Package product page form
-  const itemSelector = document.querySelectorAll(".catalog-item-selector");
-
   // Total furniture
-  let dataLimits = document.querySelectorAll('[data-furniture-limit]');
+  let dataLimits = document.querySelectorAll("[data-furniture-limit]");
   let totalFurnitureNeeded = Array.from(dataLimits)
-    .map(item => item.getAttribute('data-furniture-limit'))
+    .map((item) => item.getAttribute("data-furniture-limit"))
     .reduce((sum, value) => Number(sum) + Number(value), 0);
   document.getElementById("category-max").innerHTML = totalFurnitureNeeded;
 
@@ -16,6 +12,7 @@ window.onload = function () {
     contain: true,
     pageDots: false,
     prevNextButtons: false,
+    watchCSS: true,
   });
 
   // Order list
@@ -27,77 +24,88 @@ window.onload = function () {
   });
 
   // Updates order list
-  let inputContainer = document.getElementById('product-inputs--visually-hidden');
+  let inputContainer = document.getElementById(
+    "product-inputs--visually-hidden"
+  );
   let updateOrderList = function () {
     let orderList = document.querySelectorAll(".product-category__item.active");
     let ordersArr = Array.from(orderList).map((item) => ({
       category: item.getAttribute("data-select-category"),
       code: item.getAttribute("data-select-code"),
       image: item.getAttribute("data-select-image"),
-      quantity: item.querySelector('[data-value]').getAttribute("data-value"),
+      quantity: item.querySelector("[data-value]").getAttribute("data-value"),
     }));
 
-    ordersArr.forEach(order => {
+    ordersArr.forEach((order) => {
       // let count = order.quantity > 1 ? ` x ${order.quantity}` : "";
       let newInput = document.createElement("input");
       inputContainer.appendChild(newInput);
-      newInput.setAttribute("name", `properties[${order.category} - ${order.code}]`);
+      newInput.setAttribute(
+        "name",
+        `properties[${order.category} - ${order.code}]`
+      );
       newInput.type = "text";
       newInput.value = `${order.quantity}`;
-    })
+    });
 
-    let itemImagesReview = document.querySelector('.order-modal__items-ctn');
+    let itemImagesReview = document.querySelector(".order-modal__items-ctn");
     itemImagesReview.innerHTML = "";
-    let itemImage = document.querySelectorAll('.item-image');
-    itemImage.forEach(item => {
+    let itemImage = document.querySelectorAll(".item-image");
+    itemImage.forEach((item) => {
       let imageBlock = document.createElement("div");
       itemImagesReview.appendChild(imageBlock);
       imageBlock.style.backgroundImage = item.style.backgroundImage;
-      imageBlock.classList.add('order-modal__item-image');
-
-      console.log(item.style.backgroundImage)
-    })
-
-    console.log(itemImagesReview);
+      imageBlock.classList.add("order-modal__item-image");
+    });
   };
 
   // Updates furniture counter
-  let updateCounter = function() {
-    let currentCount = document.querySelectorAll('[data-category-filled="true"]');
-    document.getElementById('order-count').innerHTML = currentCount.length;
+  let updateCounter = function () {
+    let currentCount = document.querySelectorAll(
+      '[data-category-filled="true"]'
+    );
+    document.getElementById("order-count").innerHTML = currentCount.length;
 
     if (currentCount.length === totalFurnitureNeeded) {
-      document.querySelector('.product-package__add-to-cart-btn').disabled = false;
+      document.querySelector(
+        ".product-package__add-to-cart-btn"
+      ).disabled = false;
     } else if (currentCount.length < totalFurnitureNeeded) {
-      document.querySelector('.product-package__add-to-cart-btn').disabled = true;
+      document.querySelector(
+        ".product-package__add-to-cart-btn"
+      ).disabled = true;
     }
-  }
+  };
 
   // Order Review Modal
-  let orderReviewBtn = document.querySelector('.product-package__add-to-cart-btn');
-  let orderReviewModalBG = document.getElementById('order-modal__background');
-  let orderReviewModal = document.getElementById('order-modal__modal');
+  let orderReviewBtn = document.querySelector(
+    ".product-package__add-to-cart-btn"
+  );
+  let orderReviewModalBG = document.getElementById("order-modal__background");
+  let orderReviewModal = document.getElementById("order-modal__modal");
 
-  orderReviewBtn.addEventListener('click', function () {
-    document.body.style.overflow = 'hidden';
-    orderReviewModalBG.classList.add('active');
+  orderReviewBtn.addEventListener("click", function () {
+    document.body.style.overflow = "hidden";
+    orderReviewModalBG.classList.add("active");
     updateOrderList();
-  })
+  });
 
-  orderReviewModalBG.addEventListener('click', function () {
-    document.body.style.overflow = 'unset';
-    orderReviewModalBG.classList.remove('active');
-  })
+  orderReviewModalBG.addEventListener("click", function () {
+    document.body.style.overflow = "unset";
+    orderReviewModalBG.classList.remove("active");
+  });
 
-  orderReviewModal.addEventListener('click', function(e) {
+  orderReviewModal.addEventListener("click", function (e) {
     e.stopPropagation();
-  })
+  });
 
-  document.getElementById('order-modal__close').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.body.style.overflow = 'unset';
-    orderReviewModalBG.classList.remove('active');
-  })
+  document
+    .getElementById("order-modal__close")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      document.body.style.overflow = "unset";
+      orderReviewModalBG.classList.remove("active");
+    });
 
   // Select furniture
   let furnitureCategory = document.querySelectorAll(
@@ -110,9 +118,6 @@ window.onload = function () {
     if (categoryLimit > 1) {
       furnitureItem.forEach((furniture) => {
         furniture.addEventListener("click", function (event) {
-          if( event.target !== this ) {
-            return;
-          }
           let furnitureSelected = category.querySelectorAll(
             ".product-category__item.active"
           );
@@ -126,37 +131,57 @@ window.onload = function () {
 
           if (furniture.classList.contains("active")) {
             furniture.classList.remove("active");
-            event.target
+            let currentTarget = event.target;
+            if (event.target == this) {
+              event.target
+                .querySelector(".product-category__quantity-selector")
+                .classList.add("active");
+            } else if (
+              event.target.classList.contains("product-category__checkmark")
+            ) {
+              currentTarget = event.target.parentElement;
+            }
+            currentTarget
               .querySelector(".product-category__quantity-selector")
               .classList.remove("active");
-            event.target
+            currentTarget
               .querySelector("[data-value]")
               .setAttribute("data-value", "1");
-            event.target.querySelector("[data-value]").innerHTML = 1;
+            currentTarget.querySelector("[data-value]").innerHTML = 1;
 
             // Order summary update
-            let parentElem = category.querySelectorAll('.product-category__item.active');
-            let selectedFurniture = Array.from(parentElem).map(selected => ({
-              category: selected.getAttribute('data-select-category'),
-              image: selected.getAttribute('data-select-image'),
-              quantity: selected.querySelector('[data-value]').getAttribute('data-value')
-            }))
-            let currentCategory = category.getAttribute('data-furniture-category');
+            let parentElem = category.querySelectorAll(
+              ".product-category__item.active"
+            );
+            let selectedFurniture = Array.from(parentElem).map((selected) => ({
+              category: selected.getAttribute("data-select-category"),
+              image: selected.getAttribute("data-select-image"),
+              quantity: selected
+                .querySelector("[data-value]")
+                .getAttribute("data-value"),
+            }));
+            let currentCategory = category.getAttribute(
+              "data-furniture-category"
+            );
             let orderImages = [];
-            selectedFurniture.forEach(item => {
-              [...Array(Number(item.quantity))].forEach(() => orderImages.push(item.image));
-            })
-            let orderSummaryBoxes = document.querySelectorAll(`[data-order-summary-category="${currentCategory}"]`);
+            selectedFurniture.forEach((item) => {
+              [...Array(Number(item.quantity))].forEach(() =>
+                orderImages.push(item.image)
+              );
+            });
+            let orderSummaryBoxes = document.querySelectorAll(
+              `[data-order-summary-category="${currentCategory}"]`
+            );
             orderSummaryBoxes.forEach((item, index) => {
-              let orderImage = item.querySelector('.item-image');
+              let orderImage = item.querySelector(".item-image");
               if (orderImages[index]) {
                 orderImage.style.backgroundImage = `url(${orderImages[index]})`;
-                item.setAttribute('data-category-filled', true);
+                item.setAttribute("data-category-filled", true);
               } else {
-                orderImage.style.backgroundImage = 'unset';
-                item.setAttribute('data-category-filled', false);
+                orderImage.style.backgroundImage = "unset";
+                item.setAttribute("data-category-filled", false);
               }
-            })
+            });
             updateCounter();
           } else {
             if (
@@ -164,42 +189,59 @@ window.onload = function () {
               currentlySelectedCount < categoryLimit
             ) {
               furniture.classList.add("active");
-              event.target
-                .querySelector(".product-category__quantity-selector")
-                .classList.add("active");
+              if (event.target == this) {
+                event.target
+                  .querySelector(".product-category__quantity-selector")
+                  .classList.add("active");
+              } else if (
+                event.target.classList.contains("product-category__checkmark")
+              ) {
+                event.target.parentElement
+                  .querySelector(".product-category__quantity-selector")
+                  .classList.add("active");
+              }
 
               // Order summary update
-              let parentElem = category.querySelectorAll('.product-category__item.active');
-              let selectedFurniture = Array.from(parentElem).map(selected => ({
-                category: selected.getAttribute('data-select-category'),
-                image: selected.getAttribute('data-select-image'),
-                quantity: selected.querySelector('[data-value]').getAttribute('data-value')
-              }))
-              let currentCategory = category.getAttribute('data-furniture-category');
+              let parentElem = category.querySelectorAll(
+                ".product-category__item.active"
+              );
+              let selectedFurniture = Array.from(parentElem).map(
+                (selected) => ({
+                  category: selected.getAttribute("data-select-category"),
+                  image: selected.getAttribute("data-select-image"),
+                  quantity: selected
+                    .querySelector("[data-value]")
+                    .getAttribute("data-value"),
+                })
+              );
+              let currentCategory = category.getAttribute(
+                "data-furniture-category"
+              );
               let orderImages = [];
-              selectedFurniture.forEach(item => {
-                [...Array(Number(item.quantity))].forEach(() => orderImages.push(item.image));
-              })
-              let orderSummaryBoxes = document.querySelectorAll(`[data-order-summary-category="${currentCategory}"]`);
+              selectedFurniture.forEach((item) => {
+                [...Array(Number(item.quantity))].forEach(() =>
+                  orderImages.push(item.image)
+                );
+              });
+              let orderSummaryBoxes = document.querySelectorAll(
+                `[data-order-summary-category="${currentCategory}"]`
+              );
               orderSummaryBoxes.forEach((item, index) => {
                 if (orderImages[index]) {
-                  let orderImage = item.querySelector('.item-image');
+                  let orderImage = item.querySelector(".item-image");
                   orderImage.style.backgroundImage = `url(${orderImages[index]})`;
-                  item.setAttribute('data-category-filled', true);
+                  item.setAttribute("data-category-filled", true);
                 }
-              })
+              });
               updateCounter();
-              }
             }
+          }
         });
       });
     } else {
       furnitureItem.forEach((furniture) => {
         furniture.addEventListener("click", function (event) {
-          if( event.target !== this ) {
-            return;
-          }
-          let selectActive = new Promise((res, rej) => {
+          let selectActive = new Promise((res) => {
             furnitureItem.forEach((item, i, arr) => {
               item.classList.remove("active");
               if (i === arr.length - 1) res();
@@ -208,12 +250,17 @@ window.onload = function () {
           selectActive.then(() => {
             furniture.classList.add("active");
             // Select furniture to image
-            let currentImage = event.target.getAttribute('data-select-image');
-            let currentCategory = event.target.getAttribute('data-select-category');
-            let orderSummaryParent = document.querySelector(`[data-order-summary-category="${currentCategory}"]`);
-            let orderBackground = orderSummaryParent.querySelector('.item-image');
-            orderBackground.style.backgroundImage = `url(${currentImage})`
-            orderSummaryParent.setAttribute('data-category-filled', true);
+            let currentImage = event.target.getAttribute("data-select-image");
+            let currentCategory = event.target.getAttribute(
+              "data-select-category"
+            );
+            let orderSummaryParent = document.querySelector(
+              `[data-order-summary-category="${currentCategory}"]`
+            );
+            let orderBackground =
+              orderSummaryParent.querySelector(".item-image");
+            orderBackground.style.backgroundImage = `url(${currentImage})`;
+            orderSummaryParent.setAttribute("data-category-filled", true);
 
             updateCounter();
           });
@@ -264,25 +311,33 @@ window.onload = function () {
         quantity.innerHTML = Number(quantity.getAttribute("data-value"));
 
         // Order summary update
-        let selectedFurniture = Array.from(furnitureSelected).map(selected => ({
-          category: selected.getAttribute('data-select-category'),
-          image: selected.getAttribute('data-select-image'),
-          quantity: selected.querySelector('[data-value]').getAttribute('data-value')
-        }))
+        let selectedFurniture = Array.from(furnitureSelected).map(
+          (selected) => ({
+            category: selected.getAttribute("data-select-category"),
+            image: selected.getAttribute("data-select-image"),
+            quantity: selected
+              .querySelector("[data-value]")
+              .getAttribute("data-value"),
+          })
+        );
 
-        let orderImages = []
-        selectedFurniture.forEach(item => {
-          [...Array(Number(item.quantity))].forEach(() => orderImages.push(item.image));
-        })
+        let orderImages = [];
+        selectedFurniture.forEach((item) => {
+          [...Array(Number(item.quantity))].forEach(() =>
+            orderImages.push(item.image)
+          );
+        });
 
-        let orderSummaryBoxes = document.querySelectorAll(`[data-order-summary-category="${btnCategory}"]`);
+        let orderSummaryBoxes = document.querySelectorAll(
+          `[data-order-summary-category="${btnCategory}"]`
+        );
         orderSummaryBoxes.forEach((item, index) => {
           if (orderImages[index]) {
-            let orderImage = item.querySelector('.item-image');
+            let orderImage = item.querySelector(".item-image");
             orderImage.style.backgroundImage = `url(${orderImages[index]})`;
-            item.setAttribute('data-category-filled', true);
+            item.setAttribute("data-category-filled", true);
           }
-        })
+        });
         updateCounter();
       }
     });
@@ -302,27 +357,35 @@ window.onload = function () {
         let furnitureSelected = parentElem.querySelectorAll(
           ".product-category__item.active"
         );
-        let selectedFurniture = Array.from(furnitureSelected).map(selected => ({
-          category: selected.getAttribute('data-select-category'),
-          image: selected.getAttribute('data-select-image'),
-          quantity: selected.querySelector('[data-value]').getAttribute('data-value')
-        }))
+        let selectedFurniture = Array.from(furnitureSelected).map(
+          (selected) => ({
+            category: selected.getAttribute("data-select-category"),
+            image: selected.getAttribute("data-select-image"),
+            quantity: selected
+              .querySelector("[data-value]")
+              .getAttribute("data-value"),
+          })
+        );
 
-        let orderImages = []
-        selectedFurniture.forEach(item => {
-          [...Array(Number(item.quantity))].forEach(() => orderImages.push(item.image));
-        })
+        let orderImages = [];
+        selectedFurniture.forEach((item) => {
+          [...Array(Number(item.quantity))].forEach(() =>
+            orderImages.push(item.image)
+          );
+        });
 
-        let orderSummaryBoxes = document.querySelectorAll(`[data-order-summary-category="${btnCategory}"]`);
+        let orderSummaryBoxes = document.querySelectorAll(
+          `[data-order-summary-category="${btnCategory}"]`
+        );
         orderSummaryBoxes.forEach((item, index) => {
-          let orderImage = item.querySelector('.item-image');
+          let orderImage = item.querySelector(".item-image");
           if (orderImages[index]) {
-            orderImage.style.backgroundImage = `url(${orderImages[index]})`
+            orderImage.style.backgroundImage = `url(${orderImages[index]})`;
           } else {
-            orderImage.style.backgroundImage = 'unset'
-            item.setAttribute('data-category-filled', false);
+            orderImage.style.backgroundImage = "unset";
+            item.setAttribute("data-category-filled", false);
           }
-        })
+        });
         updateCounter();
       }
     });
@@ -332,7 +395,7 @@ window.onload = function () {
   let filterBtn = document.querySelectorAll(".product-package__btn");
   filterBtn.forEach((btn) => {
     btn.addEventListener("click", function () {
-      let removeActive = new Promise((res, rej) => {
+      let removeActive = new Promise((res) => {
         filterBtn.forEach((item, i, arr) => {
           item.classList.remove("active");
           if (i === arr.length - 1) res();
@@ -355,39 +418,62 @@ window.onload = function () {
   });
 
   // orders expand
-  let expandBtn = document.querySelector('.product-package__order-expand');
-  let orderSummaryBar = document.querySelector('.product-package__order-preview');
-  expandBtn.addEventListener('click', function(e) {
+  let expandBtn = document.querySelector(".product-package__order-expand");
+  let orderSummaryBar = document.querySelector(
+    ".product-package__order-preview"
+  );
+  expandBtn.addEventListener("click", function (e) {
     e.preventDefault();
+    let translateHeight = document.querySelector(
+      ".product-package__carousel-ctn"
+    ).offsetHeight;
 
-    if (orderSummaryBar.classList.contains('hide')) {
-      orderSummaryBar.classList.remove('hide');
+    if (orderSummaryBar.classList.contains("hide")) {
+      orderSummaryBar.style.transform = `translateY(0px)`;
+      orderSummaryBar.classList.remove("hide");
     } else {
-      orderSummaryBar.classList.add('hide');
+      orderSummaryBar.style.transform = `translateY(${translateHeight + 1}px)`;
+      orderSummaryBar.classList.add("hide");
     }
-  })
+  });
 
   // furniture info popup
-  let infoButtons = document.querySelectorAll('.product-category__info.info-btn--mobile');
-  infoButtons.forEach(btn => {
-    btn.addEventListener('click', function(e) {
+  let infoButtons = document.querySelectorAll(
+    ".product-category__info.info-btn--mobile"
+  );
+  infoButtons.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
       e.stopPropagation();
-      let popupCode = e.target.parentElement.getAttribute('data-popup-btn-code');
+      let popupCode = e.target.parentElement.getAttribute(
+        "data-popup-btn-code"
+      );
       let popupBox = document.querySelector(`[data-popup-code=${popupCode}]`);
-      popupBox.classList.add('active')
-      document.body.style.overflow = 'hidden';
+      popupBox.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  });
+  let infoButtonsDesktop = document.querySelectorAll(
+    ".product-category__info.info-btn--desktop"
+  );
+  infoButtonsDesktop.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+  });
+  let popUp = document.querySelectorAll(".product-category__info-popup");
+  popUp.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+  });
 
-      console.log(popupBox)
-    })
-  })
-
-  let closeBtn = document.querySelectorAll('#product-category__info-close');
-  closeBtn.forEach(btn => {
-    btn.addEventListener('click', function (e) {
+  let closeBtn = document.querySelectorAll("#product-category__info-close");
+  closeBtn.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
-      e.target.parentElement.classList.remove('active');
-      document.body.style.overflow = 'unset';
-    })
-  })
+      e.target.parentElement.classList.remove("active");
+      document.body.style.overflow = "unset";
+    });
+  });
 };

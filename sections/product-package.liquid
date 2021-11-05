@@ -8,7 +8,7 @@
 
 <div class="product-package">
   <div class="product-package__category-list-ctn">
-    <p class="product-package__category-list-title">choose items from each category to fill your packages</p>
+    <p class="product-package__category-list-title">Choose items from each category to fill your packages.</p>
     <div class="product-package__category-list">
       {% for item in package_categories %}
         {% assign loop_count = forloop.index %}
@@ -40,7 +40,9 @@
       <div class="product-package__order-header">
         <span>{{ product.title | upcase }} - CHOOSE YOUR ITEMS</span>
         <div class="product-package__add-to-cart">
-          <button type="button" class="product-package__add-to-cart-btn" disabled>Review</button>
+          <button type="button" class="product-package__add-to-cart-btn" >
+            <span>review order and choose delivery date</span>
+          </button>
           <p><span id="order-count">0</span>/<span id="category-max"></span></p>
         </div>
         <button class="product-package__order-expand">{% render 'icon-expand' %}</button>

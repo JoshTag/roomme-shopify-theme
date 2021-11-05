@@ -724,38 +724,67 @@ class VariantRadios extends VariantSelects {
 
 customElements.define('variant-radios', VariantRadios);
 
-const singleElementAOS = function(elem) {
-  const box = gsap.utils.toArray(elem);
+window.onload = function () {
+  // Packages smooth scroll
+  let smoothScrollBtn = document.querySelector(".package-smooth-scroll");
+  smoothScrollBtn.addEventListener("click", function (e) {
+    e.preventDefault();
 
-  const anim = gsap.fromTo(box, {autoAlpha: 0, y: 40}, {duration: 1.4, autoAlpha: 1, y: 0, ease: Power4.easeOut});
-  ScrollTrigger.create({
-    trigger: box,
-    animation: anim,
-    toggleActions: 'play none none none',
-    once: true,
-    start: "top bottom-=200px"
-  });
-}
-
-const multiElementAOS = function(elemParent, elemChildren) {
-  const textBoxChildren = gsap.utils.toArray(elemChildren);
-  const textBox = gsap.utils.toArray(elemParent);
-
-  textBoxChildren.forEach((box, i) => {
-    const anim = gsap.fromTo(box, {autoAlpha: 0, y: 20}, {duration: 1.4, autoAlpha: 1, y: 0, ease: Power4.easeOut, delay: i * .4});
-    ScrollTrigger.create({
-      trigger: textBox,
-      animation: anim,
-      toggleActions: 'play none none none',
-      once: true,
-      start: "top bottom-=200px"
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
     });
   });
-}
 
-singleElementAOS('.hero__h1')
-singleElementAOS('.button-fullscreen')
-singleElementAOS('.package-1-outer')
-singleElementAOS('.quote-ctn')
-multiElementAOS('.text-box', '.text-box > *')
-multiElementAOS('.steps', '.steps > *')
+  const singleElementAOS = function (elem) {
+    const box = gsap.utils.toArray(elem);
+
+    const anim = gsap.fromTo(
+      box,
+      { autoAlpha: 0, y: 40 },
+      { duration: .8, autoAlpha: 1, y: 0, ease: Power2.out }
+    );
+    ScrollTrigger.create({
+      trigger: box,
+      animation: anim,
+      toggleActions: "play none none none",
+      once: true,
+      start: "top bottom-=120px",
+    });
+  };
+
+  const multiElementAOS = function (elemParent, elemChildren) {
+    const textBoxChildren = gsap.utils.toArray(elemChildren);
+    const textBox = gsap.utils.toArray(elemParent);
+
+    textBoxChildren.forEach((box, i) => {
+      const anim = gsap.fromTo(
+        box,
+        { autoAlpha: 0, y: 20 },
+        {
+          duration: .8,
+          autoAlpha: 1,
+          y: 0,
+          ease: Power2.out,
+          delay: i * 0.2,
+        }
+      );
+      ScrollTrigger.create({
+        trigger: textBox,
+        animation: anim,
+        toggleActions: "play none none none",
+        once: true,
+        start: "top bottom-=200px",
+      });
+    });
+  };
+
+  singleElementAOS(".hero__h1");
+  singleElementAOS(".hero__p");
+  singleElementAOS(".button-fullscreen");
+  singleElementAOS(".package-1-outer");
+  singleElementAOS(".quote-ctn");
+  singleElementAOS(".steps-animate-1");
+  singleElementAOS(".steps-animate-2");
+  singleElementAOS(".steps-animate-3");
+  multiElementAOS(".text-box", ".text-box > *");
+};

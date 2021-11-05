@@ -1,6 +1,5 @@
 <div class="product-category" data-catalog-category="{{ item.category }}">
   <div class="product-category__header">
-    <h2>{{ item.category | upcase }}</h2>
     <span>choose {{ item.limit }}</span>
   </div>
   <div
@@ -16,7 +15,10 @@
           data-select-image="{{ furniture_image[i] }}"
           data-select-limit="{{ item.limit }}">
           <h3>{{ furniture_furniture_code[i] }} {% if furniture_quantity[i] > "1" %}- set of {{ furniture_quantity[i] }}{% endif %}</h3>
-          <span class="product-category__checkmark"></span>
+          <span
+            class="product-category__checkmark"
+            data-select-category="{{ furniture_category[i] }}"
+            data-select-image="{{ furniture_image[i] }}"></span>
           <div class="product-category__info info-btn--mobile" data-popup-btn-code="{{ furniture_furniture_code[i] }}">
             {% render 'icon-info' %}
           </div>

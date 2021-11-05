@@ -102,17 +102,46 @@
 }
 
 .order-modal__checkout {
+  position: relative;
   margin-top: 20px;
   margin-left: auto;
-  color: rgba(var(--color-foreground), 0.75);
-  font-size: 17px;
   width: fit-content;
-  border: none;
   text-decoration: none;
   transition: 0.3s;
 }
 
-.order-modal__checkout:hover {
+.order-modal__checkout-btn {
+  background-color: transparent;
+  border: none;
+  color: rgba(var(--color-foreground), 0.75);
+  font-size: 17px;
+}
+
+.order-modal__checkout-btn:hover {
   cursor: pointer;
-  text-decoration: underline;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .order-modal__checkout:hover {
+    transform: translateX(-40px);
+  }
+
+  .order-modal__checkout:before {
+    position: absolute;
+    content: '\2192';
+    top: 50%;
+    right: 0;
+    width: 0;
+    font-size: 20px;
+    overflow: hidden;
+    transform: translate(0px, -51%);
+    transition: 0.3s;
+    color: rgba(var(--color-foreground), 0.75);
+  }
+
+  .order-modal__checkout:hover:before {
+    width: 40px;
+    transform: translate(40px, -51%);
+  }
 }

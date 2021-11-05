@@ -5,9 +5,19 @@
     background-position: center;
     display: flex;
     justify-content: flex-end;
-    padding: 12rem;
+    padding: 2rem;
     border-top: 1px solid #000000;
     border-bottom: 1px solid #000000;
+}
+@media screen and (min-width: 500px) {
+    .quote {
+        padding: 4rem;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .quote {
+        padding: 12rem;
+    }
 }
 
 .quote-ctn{
@@ -18,7 +28,12 @@
     align-items: center;
     border: 1px solid #363636;
     width: 48%;
-    padding: 3rem;
+    padding: 0rem;
+}
+@media screen and (min-width: 500px) {
+    .quote-ctn{
+        padding: 3rem;
+    }
 }
 @media screen and (max-width:2000px){
     .quote-ctn{
@@ -36,7 +51,7 @@
     color: #363636;
     text-align: center;
     margin: 1rem;
-    padding: 4rem;
+    padding: 3rem;
     font-size: 11pt;
     line-height: 39px;
 }
