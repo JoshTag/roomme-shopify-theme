@@ -36,7 +36,7 @@
               <tr>
                 <th class="caption-with-letter-spacing" colspan="2" scope="col">{{ 'sections.cart.headings.product' | t }}</th>
                 <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.total' | t }}</th>
-                <!-- <th class="cart-items__heading--wide small-hide caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.quantity' | t }}</th> -->
+                <th class="cart-items__heading--wide small-hide caption-with-letter-spacing" colspan="1" scope="col">REMOVE</th>
                 <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.total' | t }}</th>
               </tr>
             </thead>
@@ -165,8 +165,8 @@
                     </div>
                   </td>
 
-                  <!-- <td class="cart-item__quantity">
-                    <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
+                  <td class="cart-item__quantity">
+                    <!-- <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                       {{ 'products.product.quantity.label' | t }}
                     </label>
                     <quantity-input class="quantity">
@@ -187,14 +187,14 @@
                         <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
                         {% render 'icon-plus' %}
                       </button>
-                    </quantity-input>
+                    </quantity-input> -->
 
                     <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                         {% render 'icon-remove' %}
                       </a>
                     </cart-remove-button>
-                  </td> -->
+                  </td>
 
                   <td class="cart-item__totals right small-hide">
                     <div class="loading-overlay hidden">
