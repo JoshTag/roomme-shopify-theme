@@ -14,7 +14,7 @@
           data-select-code="{{ furniture_furniture_code[i] }}"
           data-select-image="{{ furniture_image[i] }}"
           data-select-limit="{{ item.limit }}">
-          <h3>{{ furniture_furniture_code[i] }} {% if furniture_quantity[i] > "1" %}- set of {{ furniture_quantity[i] }}{% endif %}</h3>
+          <h3>{{ furniture_furniture_code[i] }}</h3>
           <div class="product-category__quantity-selector" data-max-value="{{ item.limit }}">
             <button class="product-category__quantity-selector--subtract" type="button" data-category-subtract="{{ furniture_category[i] }}">-</button>
             <span class="product-category__quantity" data-value="1">1</span>
@@ -40,7 +40,7 @@
               {% if furniture_height[i] != blank %}<span>/ height: {{ furniture_height[i] }}</span>{% endif %}
             </div>
             <h5>materials</h5>
-            <p>materials</p>
+            <p>{{ furniture_materials[i] }}</p>
           </div>
         </div>
       {% endif %}
