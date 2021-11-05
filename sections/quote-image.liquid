@@ -2,12 +2,11 @@
 
 <div class="quote">
     <div class="quote-ctn">
-        <p class="quote-text">“I put off getting into the short-term rental market for years - 
-            until I found out about Roomme. My property was earning money within a couple of weeks - 
-            and I was getting 5 star reviews!”
+        <p class="quote-text">
+          {{ section.settings.quote }}
         </p>
-        <p class="quote-name">-Isabel M.</p>
-        <p class="quote-location">Montreal, Quebec</p>
+        <p class="quote-name">{{ section.settings.name }}</p>
+        <p class="quote-location">{{ section.settings.city }}</p>
     </div>
 </div>
 
@@ -16,9 +15,19 @@
   "name": "Quote with Image",
   "settings": [
     {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote"
+    },
+    {
       "type": "text",
-      "id": "title",
-      "label": "Title"
+      "id": "name",
+      "label": "Name"
+    },
+    {
+      "type": "text",
+      "id": "city",
+      "label": "City"
     }
   ],
   "presets": [

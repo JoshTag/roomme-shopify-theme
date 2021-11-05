@@ -1,8 +1,8 @@
 {{ 'section-button-full-screen.css' | asset_url | stylesheet_tag }}
 
 <div class="button-full-screen">
-<a herf="#" class="button-fullscreen">
-  <span class="button-fullscreen__text">get started</span>
+<a herf="{{ section.settings.url }}" class="button-fullscreen">
+  <span class="button-fullscreen__text">{{ section.settings.link_label }}</span>
 </a>
 </div>
 
@@ -12,8 +12,13 @@
   "settings": [
     {
       "type": "text",
-      "id": "title",
-      "label": "Title"
+      "id": "link_label",
+      "label": "Link label"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "url"
     }
   ],
   "presets": [

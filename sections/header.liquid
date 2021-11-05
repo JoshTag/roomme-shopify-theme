@@ -388,7 +388,7 @@
                   </details>
                 </details-disclosure>
               {%- else -%}
-                <a href="{{ link.url }}" class="{% if link.url == "#package-section" %}package-smooth-scroll{% endif %} header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                <a href="{% if link.url == "#package-section" and template.name != "index" %}https://roomme.ca/#package-section{% else %}{{ link.url }}{% endif %}" class="{% if link.url == "#package-section" %}{% if template.name == "index" %}package-smooth-scroll{% endif %}{% endif %} header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
                   <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                 </a>
               {%- endif -%}

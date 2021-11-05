@@ -5,25 +5,25 @@
         <div class="steps-ctn-mobile">
             <div class="steps-number">1</div>
             <div class="steps-line">  </div>
-            <div class="steps-title">choose your package</div>
+            <div class="steps-title">{{ section.settings.step_one_title }}</div>
         </div>
-        <div class="steps-description">Choose one of our furnishing packages. For a flat fee, you can fill your whole space with  modern and beautiful furniture and accessories.</div>
+        <div class="steps-description">{{ section.settings.step_one_paragraph }}</div>
     </div>
     <div class="steps-inner-mid steps-animate-2">
-        <div class="steps-description">Select the furniture from our catalogue to fill out your package. Need some design help? Chat with an expert for free.</div>
+        <div class="steps-description">{{ section.settings.step_two_paragraph }}</div>
         <div class="steps-ctn-mobile">
             <div class="steps-number">2</div>
             <div class="steps-line">  </div>
-            <div class="steps-title">select your furniture</div>
+            <div class="steps-title">{{ section.settings.step_two_title }}</div>
         </div>
     </div>
     <div class="steps-inner steps-animate-3">
         <div class="steps-ctn-mobile">
             <div class="steps-number">3</div>
             <div class="steps-line">  </div>
-            <div class="steps-title">delivery, essembly <br>& installation</div>
+            <div class="steps-title">{{ section.settings.step_two_title }}</div>
         </div>
-        <div class="steps-description">Roomme delivers white glove service to your door, by essembling and installing all furnishings.</div>
+        <div class="steps-description">{{ section.settings.step_three_paragraph }}</div>
     </div>
 </div>
 
@@ -33,8 +33,33 @@
   "settings": [
     {
       "type": "text",
-      "id": "title",
-      "label": "Title"
+      "id": "step_one_title",
+      "label": "Step one title"
+    },
+    {
+      "type": "textarea",
+      "id": "step_one_paragraph",
+      "label": "Step one paragraph"
+    },
+    {
+      "type": "text",
+      "id": "step_two_title",
+      "label": "Step two title"
+    },
+    {
+      "type": "textarea",
+      "id": "step_two_paragraph",
+      "label": "Step two paragraph"
+    },
+    {
+      "type": "text",
+      "id": "step_three_title",
+      "label": "Step three title"
+    },
+    {
+      "type": "textarea",
+      "id": "step_three_paragraph",
+      "label": "Step three paragraph"
     }
   ],
   "presets": [

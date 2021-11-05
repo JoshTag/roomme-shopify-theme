@@ -289,6 +289,7 @@
   background-repeat: no-repeat;
   background-position: center;
   display: block;
+  transition: .3s;
 }
 
 .product-category__item.active > .product-category__checkmark {
@@ -403,11 +404,33 @@
 }
 
 .product-category__quantity-selector.active {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   position: absolute;
-  width: 100px;
-  background-color: #424242;
+  bottom: 10px;
+  right: 10px;
+  width: 70px;
+  height: 30px;
+  background-color: transparent;
+  border: solid 1px #000000;
   z-index: 1000;
+}
+
+.product-category__quantity-selector.active > button  {
+  background: transparent;
+  border: none;
+  height: 100%;
+  font-size: 20px;
+}
+
+.product-category__quantity-selector.active > span  {
+  margin-left: 2px;
+}
+
+.product-category__quantity-selector.active + .product-category__checkmark {
+  bottom: 50px;
+  right: 30px;
 }
 
 /* categories */
