@@ -93,7 +93,7 @@
 }
 .package-bottom-ctn{
     position: relative;
-    background:#363636;
+    background-color:#363636;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,6 +101,7 @@
     border-left: 1px solid #363636;
     border-right: 1px solid #363636;
     border-bottom: 1px solid #363636;
+    transition: 0.3s;
 }
 
 .package-bottom-ctn:hover {

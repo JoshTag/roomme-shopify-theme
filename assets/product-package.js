@@ -66,11 +66,11 @@ window.onload = function () {
     let currentCount = document.querySelectorAll('[data-category-filled="true"]');
     document.getElementById('order-count').innerHTML = currentCount.length;
 
-    // if (currentCount.length === totalFurnitureNeeded) {
-    //   document.querySelector('.product-package__add-to-cart-btn').disabled = false;
-    // } else if (currentCount.length < totalFurnitureNeeded) {
-    //   document.querySelector('.product-package__add-to-cart-btn').disabled = true;
-    // }
+    if (currentCount.length === totalFurnitureNeeded) {
+      document.querySelector('.product-package__add-to-cart-btn').disabled = false;
+    } else if (currentCount.length < totalFurnitureNeeded) {
+      document.querySelector('.product-package__add-to-cart-btn').disabled = true;
+    }
   }
 
   // Order Review Modal
@@ -110,6 +110,9 @@ window.onload = function () {
     if (categoryLimit > 1) {
       furnitureItem.forEach((furniture) => {
         furniture.addEventListener("click", function (event) {
+          if( event.target !== this ) {
+            return;
+          }
           let furnitureSelected = category.querySelectorAll(
             ".product-category__item.active"
           );
@@ -193,6 +196,9 @@ window.onload = function () {
     } else {
       furnitureItem.forEach((furniture) => {
         furniture.addEventListener("click", function (event) {
+          if( event.target !== this ) {
+            return;
+          }
           let selectActive = new Promise((res, rej) => {
             furnitureItem.forEach((item, i, arr) => {
               item.classList.remove("active");
@@ -347,4 +353,41 @@ window.onload = function () {
       });
     });
   });
+
+  // orders expand
+  let expandBtn = document.querySelector('.product-package__order-expand');
+  let orderSummaryBar = document.querySelector('.product-package__order-preview');
+  expandBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    if (orderSummaryBar.classList.contains('hide')) {
+      orderSummaryBar.classList.remove('hide');
+    } else {
+      orderSummaryBar.classList.add('hide');
+    }
+  })
+
+  // furniture info popup
+  let infoButtons = document.querySelectorAll('.product-category__info.info-btn--mobile');
+  infoButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      let popupCode = e.target.parentElement.getAttribute('data-popup-btn-code');
+      let popupBox = document.querySelector(`[data-popup-code=${popupCode}]`);
+      popupBox.classList.add('active')
+      document.body.style.overflow = 'hidden';
+
+      console.log(popupBox)
+    })
+  })
+
+  let closeBtn = document.querySelectorAll('#product-category__info-close');
+  closeBtn.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.target.parentElement.classList.remove('active');
+      document.body.style.overflow = 'unset';
+    })
+  })
 };

@@ -16,12 +16,25 @@
           data-select-image="{{ furniture_image[i] }}"
           data-select-limit="{{ item.limit }}">
           <h3>{{ furniture_furniture_code[i] }} {% if furniture_quantity[i] > "1" %}- set of {{ furniture_quantity[i] }}{% endif %}</h3>
-          <p>
-            {% if furniture_length[i] != blank %}<span>length: {{ furniture_length[i] }} /</span>{% endif %}
-            {% if furniture_width[i] != blank %}<span>width: {{ furniture_width[i] }}</span>{% endif %}
-            {% if furniture_height[i] != blank %}<span>/ height: {{ furniture_height[i] }}</span>{% endif %}
-          </p>
           <span class="product-category__checkmark"></span>
+          <div class="product-category__info info-btn--mobile" data-popup-btn-code="{{ furniture_furniture_code[i] }}">
+            {% render 'icon-info' %}
+          </div>
+          <div class="product-category__info info-btn--desktop" data-popup-btn-code="{{ furniture_furniture_code[i] }}">
+            {% render 'icon-info' %}
+          </div>
+          <div class="product-category__info-popup" data-popup-code="{{ furniture_furniture_code[i] }}">
+            <button id="product-category__info-close">&#x2715</button>
+            <h4>Product Details</h4>
+            <h5>dimensions</h5>
+            <div>
+              {% if furniture_length[i] != blank %}<span>length: {{ furniture_length[i] }} /</span>{% endif %}
+              {% if furniture_width[i] != blank %}<span>width: {{ furniture_width[i] }}</span>{% endif %}
+              {% if furniture_height[i] != blank %}<span>/ height: {{ furniture_height[i] }}</span>{% endif %}
+            </div>
+            <h5>materials</h5>
+            <p>materials</p>
+          </div>
           <div class="product-category__quantity-selector" data-max-value="{{ item.limit }}">
             <button class="product-category__quantity-selector--subtract" type="button" data-category-subtract="{{ furniture_category[i] }}">-</button>
             <span class="product-category__quantity" data-value="1">1</span>

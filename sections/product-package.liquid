@@ -22,26 +22,28 @@
   </div>
   <form class="product-package__form" method="post" action="/cart/add">
     {% for item in package_categories %}
-      {% include 'catalog-category',
-        category: item.category,
-        arr_size: catalog_size,
-        furniture_category: furniture_category,
-        furniture_furniture_code: shop.metafields.furniture.furniture_code,
-        furniture_image: shop.metafields.furniture.image,
-        furniture_length: shop.metafields.furniture.length,
-        furniture_width: shop.metafields.furniture.width,
-        furniture_height: shop.metafields.furniture.height,
-        furniture_quantity: shop.metafields.furniture.quantity
+      {% include 'catalog-category' with
+        {
+          category: item.category,
+          arr_size: catalog_size,
+          furniture_category: furniture_category,
+          furniture_furniture_code: shop.metafields.furniture.furniture_code,
+          furniture_image: shop.metafields.furniture.image,
+          furniture_length: shop.metafields.furniture.length,
+          furniture_width: shop.metafields.furniture.width,
+          furniture_height: shop.metafields.furniture.height,
+          furniture_quantity: shop.metafields.furniture.quantity
+        }
       %}
     {% endfor %}
     <div class="product-package__order-preview">
       <div class="product-package__order-header">
         <span>{{ product.title | upcase }} - CHOOSE YOUR ITEMS</span>
         <div class="product-package__add-to-cart">
-          <!-- <input type="hidden" name="id" value="{{ product.variants.first.id }}" /> -->
-          <button type="button" class="product-package__add-to-cart-btn" >Review</button>
+          <button type="button" class="product-package__add-to-cart-btn" disabled>Review</button>
           <p><span id="order-count">0</span>/<span id="category-max"></span></p>
         </div>
+        <button class="product-package__order-expand">{% render 'icon-expand' %}</button>
       </div>
       <div class="product-package__carousel-ctn">
         <div class="product-package__order-carousel">
