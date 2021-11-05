@@ -35,6 +35,7 @@
     },
     "16336271131b421c7f": {
       "type": "button-full-screen",
+      "disabled": true,
       "settings": {
         "link_label": "get started",
         "url": "shopify:\/\/collections\/packages"
