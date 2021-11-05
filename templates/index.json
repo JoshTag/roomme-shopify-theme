@@ -3,7 +3,8 @@
     "16333514059df127fe": {
       "type": "hero",
       "settings": {
-        "title": ""
+        "title": "WE FURNISH. YOU PROFIT.",
+        "subheader": "furnishing, delivery & installation for your rental space for one low price"
       }
     },
     "1633627123b5fd89a6": {
@@ -16,19 +17,27 @@
     "16336270333cc4796a": {
       "type": "half-image-text",
       "settings": {
-        "title": ""
+        "top_paragraph": "Between finding the right furniture for the right price, long shipment periods, and high delivery costs, furnishing your rental space is expensive and time-consuming.",
+        "bottom_top": "Let help you start making money now.",
+        "bottom_bot": "We will furnish, deliver, and install - all for one low price."
       }
     },
     "1633627171dc5fbd62": {
       "type": "steps",
       "settings": {
-        "title": ""
+        "step_one_title": "choose your package",
+        "step_one_paragraph": "Choose one of our furnishing packages. For a flat fee, you can fill your whole space with  modern and beautiful furniture and accessories.",
+        "step_two_title": "select your furniture",
+        "step_two_paragraph": "Select the furniture from our catalogue to fill out your package. Need some design help? \nChat with an expert for free.",
+        "step_three_title": "delivery, essembly & installation",
+        "step_three_paragraph": "Roomme delivers white glove service to your door, by essembling and installing all furnishings."
       }
     },
     "16336271131b421c7f": {
       "type": "button-full-screen",
       "settings": {
-        "title": ""
+        "link_label": "get started",
+        "url": "shopify:\/\/collections\/packages"
       }
     },
     "163362714757c170f6": {
@@ -40,7 +49,9 @@
     "1633627159cdd3c0d6": {
       "type": "quote-image",
       "settings": {
-        "title": ""
+        "quote": "“I put off getting into the short-term rental market for years - until I found out about Roomme. My property was earning money within a couple of weeks - and I was getting 5 star reviews!”",
+        "name": "- Isabel M.",
+        "city": "Montreal, Quebec"
       }
     }
   },
