@@ -100,7 +100,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .product-package__add-to-cart-btn:hover {
+  .product-package__add-to-cart-btn:enabled:hover {
     transform: translateX(-60px);
   }
 
