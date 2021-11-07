@@ -42,7 +42,7 @@
           </div>
         </div>
         <a href="{{ product.url }}" class="package-bottom-ctn">
-          <span class="view-package">view package</span>
+          <span class="view-package">{{ section.settings.button_label }}</span>
         </a>
       </div>
     {% endfor %}
@@ -57,6 +57,11 @@
       "type": "collection",
       "id": "package_collection",
       "label": "Package Collection"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
     }
   ],
   "presets": [
