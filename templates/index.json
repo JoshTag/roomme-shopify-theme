@@ -44,7 +44,8 @@
     "163362714757c170f6": {
       "type": "packages",
       "settings": {
-        "package_collection": "packages"
+        "package_collection": "packages",
+        "button_label": "select package"
       }
     },
     "1633627159cdd3c0d6": {
