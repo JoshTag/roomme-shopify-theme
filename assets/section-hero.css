@@ -1,6 +1,5 @@
 .hero {
   height: 100vh;
-  background-image: url("./hero-roomme.png");
   background-position: center;
   background-size: cover;
   display: flex;

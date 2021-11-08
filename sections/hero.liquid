@@ -1,6 +1,6 @@
 {{ 'section-hero.css' | asset_url | stylesheet_tag }}
 
-<div class="hero">
+<div class="hero" style="background-image: url({{ section.settings.hero_image | img_url: '2200x' }});">
   <div>
     <h1 class="hero__h1">{{ section.settings.title }}</h1>
     <p class="hero__p">{{ section.settings.subheader }}</p>
@@ -20,6 +20,11 @@
       "type": "text",
       "id": "subheader",
       "label": "Subheader"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
     }
   ],
   "presets": [

@@ -1,6 +1,5 @@
 .quote{
     width: 100%;
-    background-image: url("./quote-image.png");
     background-size: cover;
     background-position: center;
     display: flex;

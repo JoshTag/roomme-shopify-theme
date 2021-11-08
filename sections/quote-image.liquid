@@ -1,6 +1,6 @@
 {{ 'section-quote-image.css' | asset_url | stylesheet_tag }}
 
-<div class="quote">
+<div class="quote" style="background-image: url({{ section.settings.quote_image | img_url: '2200x' }});">
     <div class="quote-ctn">
         <p class="quote-text">
           {{ section.settings.quote }}
@@ -28,6 +28,11 @@
       "type": "text",
       "id": "city",
       "label": "City"
+    },
+    {
+      "type": "image_picker",
+      "id": "quote_image",
+      "label": "Quote Image"
     }
   ],
   "presets": [

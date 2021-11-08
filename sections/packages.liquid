@@ -23,6 +23,7 @@
                 <li class="package-list-item">couch</li>
                 <li class="package-list-item">coffee table</li>
                 <li class="package-list-item">area rug</li>
+                <li class="package-list-item">standing mirror</li>
               </div>
               <div class="package-list-section">
                 <li class="package-list-item">art work</li>
@@ -30,8 +31,8 @@
                 <li class="package-list-item">TV stand</li>
               </div>
               <div class="package-list-section">
-                <li class="package-list-item">bed</li>
-                <li class="package-list-item">nightstand</li>
+                <li class="package-list-item">bed {% if forloop.index == 2 %}(2){% endif %}</li>
+                <li class="package-list-item">nightstand {% if forloop.index == 2 %}(2){% endif %}</li>
                 <li class="package-list-item">accents</li>
               </div>
             </ul>
