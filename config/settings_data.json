@@ -12,6 +12,19 @@
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
+        "blocks": {
+          "dcf1d584-2be0-46bc-bd5b-62225ce9c42c": {
+            "type": "announcement",
+            "settings": {
+              "text": "No Tax November",
+              "color_scheme": "accent-1",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "dcf1d584-2be0-46bc-bd5b-62225ce9c42c"
+        ],
         "settings": {
         }
       },
