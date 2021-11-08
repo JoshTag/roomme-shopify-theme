@@ -4,7 +4,8 @@
       "type": "hero",
       "settings": {
         "title": "WE FURNISH, YOU PROFIT.",
-        "subheader": "furnishing your investment property has never been easier"
+        "subheader": "furnishing your investment property has never been easier",
+        "hero_image": "shopify:\/\/shop_images\/hero-roomme.png"
       }
     },
     "1633627123b5fd89a6": {
@@ -54,7 +55,8 @@
       "settings": {
         "quote": "“I put off getting into the short-term rental market for years - until I found out about Roomme. My property was earning money within a couple of weeks - and I was getting 5 star reviews!”",
         "name": "- Isabel M.",
-        "city": "Montreal, Quebec"
+        "city": "Montreal, Quebec",
+        "quote_image": "shopify:\/\/shop_images\/quote-image.png"
       }
     }
   },
