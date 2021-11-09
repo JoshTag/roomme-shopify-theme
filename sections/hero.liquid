@@ -2,8 +2,8 @@
 
 <div class="hero" style="background-image: url({{ section.settings.hero_image | img_url: '2200x' }});">
   <div>
-    <h1 class="hero__h1">{{ section.settings.title }}</h1>
-    <p class="hero__p">{{ section.settings.subheader }}</p>
+    <h1 class="hero__h1" style="color: {{ section.settings.header_color }}">{{ section.settings.title }}</h1>
+    <p class="hero__p" style="color: {{ section.settings.subheader_color }}">{{ section.settings.subheader }}</p>
   </div>
 </div>
 
@@ -25,6 +25,18 @@
       "type": "image_picker",
       "id": "hero_image",
       "label": "Hero Image"
+    },
+    {
+      "type": "color",
+      "id": "header_color",
+      "label": "Header color",
+	  "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "subheader_color",
+      "label": "Subheader color",
+	  "default": "#fff"
     }
   ],
   "presets": [
