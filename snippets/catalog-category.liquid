@@ -39,8 +39,14 @@
               {% if furniture_width[i] != blank %}<span>width: {{ furniture_width[i] }}</span>{% endif %}
               {% if furniture_height[i] != blank %}<span>/ height: {{ furniture_height[i] }}</span>{% endif %}
             </div>
-            <h5>materials</h5>
-            <p>{{ furniture_materials[i] }}</p>
+            {% if furniture_materials[i] != blank %}
+              <h5>materials</h5>
+              <p>{{ furniture_materials[i] }}</p>
+            {% endif %}
+            {% if furniture_additional_title[i] != blank and furniture_additional_content[i] != blank %}
+              <h5>{{ furniture_additional_title[i]}}</h5>
+              <p>{{ furniture_additional_content[i] }}</p>
+            {% endif %}
           </div>
         </div>
       {% endif %}

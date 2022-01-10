@@ -32,6 +32,7 @@
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {{ content_for_header }}
 
     {%- liquid
@@ -108,10 +109,12 @@
       }
 
       .neo-input {
-        height: 40px;
+        height: 4.5rem;
         border: 2px solid;
+        font-size: 15px;
+        padding-left: 15px;
       }
-    
+
       .orders-slots-heading {
     	font-size: 22px !important;
     	color: #363636 !important;

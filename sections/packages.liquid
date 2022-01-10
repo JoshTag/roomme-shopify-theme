@@ -19,22 +19,9 @@
           <div class="list-des">
             <p style="font-size: 13px">Includes your choice of:</p>
             <ul class="package-list">
-              <div class="package-list-section">
-                <li class="package-list-item">couch</li>
-                <li class="package-list-item">coffee table</li>
-                <li class="package-list-item">area rug</li>
-                <li class="package-list-item">standing mirror</li>
-              </div>
-              <div class="package-list-section">
-                <li class="package-list-item">art work</li>
-                <li class="package-list-item">floor lamp</li>
-                <li class="package-list-item">TV stand</li>
-              </div>
-              <div class="package-list-section">
-                <li class="package-list-item">bed {% if forloop.index == 2 %}(2){% endif %}</li>
-                <li class="package-list-item">nightstand {% if forloop.index == 2 %}(2){% endif %}</li>
-                <li class="package-list-item">accents</li>
-              </div>
+              {% for item in product.metafields.catalog.categories.value %}
+                <li class="package-list-item">{{ item.category }}{% if item.limit > 1 %} ({{item.limit }}){% endif %}</li>
+              {% endfor %}
             </ul>
           </div>
           <div class="package-expert">

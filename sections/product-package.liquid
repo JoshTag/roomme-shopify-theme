@@ -1,14 +1,26 @@
 {{ "section-product-package.css" | asset_url | stylesheet_tag }}
 
-{% assign catalog_size = shop.metafields.furniture.category | size %}
-{% assign categories = shop.metafields.furniture.category | uniq %}
-{% assign furniture_category = shop.metafields.furniture.category %}
-{% assign package_categories = product.metafields.catalog.categories.value %}
-{% assign package_categories_uniq = product.metafields.catalog.categories.value.categories | uniq %}
+{%- liquid
+  assign catalog_size = shop.metafields.furniture.category | size
+  assign categories = shop.metafields.furniture.category | uniq
+  assign furniture_category = shop.metafields.furniture.category
+  assign package_categories = product.metafields.catalog.categories.value
+  assign package_categories_uniq = product.metafields.catalog.categories.value.categories | uniq
+  assign furniture_furniture_code = shop.metafields.furniture.furniture_code
+  assign furniture_image = shop.metafields.furniture.image
+  assign furniture_length = shop.metafields.furniture.length
+  assign furniture_width = shop.metafields.furniture.width
+  assign furniture_height = shop.metafields.furniture.height
+  assign furniture_quantity = shop.metafields.furniture.quantity
+  assign furniture_materials = shop.metafields.furniture.materials
+  assign furniture_additional_title = shop.metafields.title.additional_info
+  assign furniture_additional_content = shop.metafields.content.additional_info
+-%}
 
 <div class="product-package">
   <div class="product-package__category-list-ctn">
     <p class="product-package__category-list-title">Choose items from each category to fill your packages.</p>
+    {{ product_option.name }}
     <div class="product-package__category-list">
       {% for item in package_categories %}
         {% assign loop_count = forloop.index %}
@@ -22,25 +34,79 @@
   </div>
   <form class="product-package__form" method="post" action="/cart/add">
     {% for item in package_categories %}
-      {% include 'catalog-category' with
-        {
-          category: item.category,
-          arr_size: catalog_size,
-          furniture_category: furniture_category,
-          furniture_furniture_code: shop.metafields.furniture.furniture_code,
-          furniture_image: shop.metafields.furniture.image,
-          furniture_length: shop.metafields.furniture.length,
-          furniture_width: shop.metafields.furniture.width,
-          furniture_height: shop.metafields.furniture.height,
-          furniture_quantity: shop.metafields.furniture.quantity
-        }
-      %}
+      <div class="product-category" data-catalog-category="{{ item.category }}">
+        <div class="product-category__header">
+          <span>choose {{ item.limit }}</span>
+        </div>
+        <div
+          class="product-category__item-ctn"
+          data-furniture-category="{{ item.category }}"
+          data-furniture-limit="{{ item.limit }}">
+          {% for i in (0..catalog_size) %}
+            {% if furniture_category[i] == item.category %}
+              <div class="product-category__item"
+                style="background-image: url({{ furniture_image[i] }})"
+                data-select-category="{{ furniture_category[i] }}"
+                data-select-code="{{ furniture_furniture_code[i] }}"
+                data-select-image="{{ furniture_image[i] }}"
+                data-select-limit="{{ item.limit }}">
+                <h3>{{ furniture_furniture_code[i] }}</h3>
+                <div class="product-category__quantity-selector" data-max-value="{{ item.limit }}">
+                  <button class="product-category__quantity-selector--subtract" type="button" data-category-subtract="{{ furniture_category[i] }}">-</button>
+                  <span class="product-category__quantity" data-value="1">1</span>
+                  <button class="product-category__quantity-selector--add" type="button" data-category-add="{{ furniture_category[i] }}">+</button>
+                </div>
+                <span
+                  class="product-category__checkmark"
+                  data-select-category="{{ furniture_category[i] }}"
+                  data-select-image="{{ furniture_image[i] }}"></span>
+                <div class="product-category__info info-btn--mobile" data-popup-btn-code="{{ furniture_furniture_code[i] }}">
+                  {% render 'icon-info' %}
+                </div>
+                <div class="product-category__info info-btn--desktop" data-popup-btn-code="{{ furniture_furniture_code[i] }}">
+                  {% render 'icon-info' %}
+                </div>
+                <div class="product-category__info-popup" data-popup-code="{{ furniture_furniture_code[i] }}">
+                  <button id="product-category__info-close">&#x2715</button>
+                  <h4>Product Details</h4>
+                  <h5>dimensions</h5>
+                  <div>
+                    {% if furniture_length[i] != blank %}<span>length: {{ furniture_length[i] }} /</span>{% endif %}
+                    {% if furniture_width[i] != blank %}<span>width: {{ furniture_width[i] }}</span>{% endif %}
+                    {% if furniture_height[i] != blank %}<span>/ height: {{ furniture_height[i] }}</span>{% endif %}
+                  </div>
+                  {% if furniture_materials[i] != blank %}
+                    <h5>materials</h5>
+                    <p>{{ furniture_materials[i] }}</p>
+                  {% endif %}
+                  {% if furniture_additional_title[i] != blank and furniture_additional_content[i] != blank %}
+                    <h5>{{ furniture_additional_title[i]}}</h5>
+                    <p>{{ furniture_additional_content[i] }}</p>
+                  {% endif %}
+                </div>
+                <div class="product-category__enlarge-btn"></div>
+                <div class="product-category__enlarge">
+                  <button class="product-category__enlarge-close">&#x2715</button>
+                  <div class="product-category__enlarge-img-ctn">
+                    <div class="container">
+                      <div class="magnify-wrapper zoom">
+                        <img src="{{ furniture_image[i] }}" class="main-img" />
+                        <div class="large-img" style="background-image: url({{ furniture_image[i] }})"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
     {% endfor %}
     <div class="product-package__order-preview">
       <div class="product-package__order-header">
         <span>{{ product.title | upcase }} - CHOOSE YOUR ITEMS</span>
         <div class="product-package__add-to-cart">
-          <button type="button" class="product-package__add-to-cart-btn" disabled>
+          <button type="button" class="product-package__add-to-cart-btn" >
             <span>review order and choose delivery date</span>
           </button>
           <p><span id="order-count">0</span>/<span id="category-max"></span></p>
