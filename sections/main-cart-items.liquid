@@ -254,7 +254,14 @@
     <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
     <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">{{ 'accessibility.loading' | t }}</p>
   </form>
-</cart-items>
+  
+  <script id="pb_prequalify" src="https://app.paybright.com/dist/sdk.js?public_key=PUBLIC_KEY_HERE&financedamount=${{
+  cart.total_price | divided_by: 100.00 | round: 2 }}"></script>
+  <script>
+  pb_prequalify_init();
+  </script>
+  <div class="paybright-widget-container"></div>
+  </cart-items>
 
 {% schema %}
 {
