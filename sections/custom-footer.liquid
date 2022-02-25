@@ -1,34 +1,36 @@
 {{ "section-custom-footer.css" | asset_url | stylesheet_tag }}
 
-<footer class="custom-footer">
-  <div class="custom-footer__logo">
-    <a href="{{ routes.root_url }}" class="custom-footer__logo-link link link--text focus-inset">
-      {%- if section.settings.logo != blank -%}
-        {%- assign image_size = section.settings.logo_width | append: 'x' -%}
-        <img srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-          src="{{ section.settings.logo | img_url: image_size }}"
-          loading="lazy"
-          class="header__heading-logo"
-          width="{{ section.settings.logo.width }}"
-          height="{{ section.settings.logo.height }}"
-          alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
-        >
-      {%- else -%}
-        <span class="h2">{{ shop.name }}</span>
-      {%- endif -%}
-    </a>
-    <span class="custom-footer__subheader">{{ section.settings.subheader }}</span>
+<footer>
+  <div class="custom-footer">
+    <div class="custom-footer__logo">
+      <a href="{{ routes.root_url }}" class="custom-footer__logo-link link link--text focus-inset">
+        {%- if section.settings.logo != blank -%}
+          {%- assign image_size = section.settings.logo_width | append: 'x' -%}
+          <img srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+            src="{{ section.settings.logo | img_url: image_size }}"
+            loading="lazy"
+            class="header__heading-logo"
+            width="{{ section.settings.logo.width }}"
+            height="{{ section.settings.logo.height }}"
+            alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
+          >
+        {%- else -%}
+          <span class="h2">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+      <span class="custom-footer__subheader">{{ section.settings.subheader }}</span>
+    </div>
+    <div class="custom-footer__menu">
+      <ul class="custom-footer__list">
+        {% for link in linklists[section.settings.footer_menu].links %}
+          <li>
+            <a class="custom-footer__list-link" href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
-  <div class="custom-footer__menu">
-    <ul class="custom-footer__list">
-      {% for link in linklists[section.settings.footer_menu].links %}
-        <li>
-          <a class="custom-footer__list-link" href="{{ link.url }}">{{ link.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-<!--   <small>Website designed and developed by <a href="http://studioklein.com" target="_blank">Studio Klein</a></small> -->
+  <small>Website designed and developed by <a href="http://studioklein.com" target="_blank">Studio Klein</a></small>
 </footer>
 
 {% schema %}
