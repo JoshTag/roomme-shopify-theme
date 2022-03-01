@@ -43,6 +43,7 @@
     },
     "16461620882781df3c": {
       "type": "featured-product",
+      "disabled": true,
       "blocks": {
         "1646162088fb722da5-0": {
           "type": "text",
@@ -112,6 +113,7 @@
     },
     "16461622142d8cdfec": {
       "type": "featured-product",
+      "disabled": true,
       "blocks": {
         "164616221423994310-0": {
           "type": "text",
@@ -178,12 +180,55 @@
         "hide_variants": false,
         "enable_video_looping": false
       }
+    },
+    "1646162521fae323b9": {
+      "type": "collage",
+      "blocks": {
+        "1646162521cbc5f7a6-1": {
+          "type": "product",
+          "settings": {
+            "product": "additional-elements-1",
+            "second_image": false,
+            "image_padding": false,
+            "secondary_background": false
+          }
+        },
+        "59701869-ab62-416a-8dbb-be81ea007a8f": {
+          "type": "product",
+          "settings": {
+            "product": "additional-elements-2br-2ba",
+            "second_image": false,
+            "image_padding": false,
+            "secondary_background": false
+          }
+        },
+        "d6aba6e0-d819-4cbc-83d5-a0f3671272af": {
+          "type": "product",
+          "settings": {
+            "product": "additional-elements-package-3br-3ba",
+            "second_image": false,
+            "image_padding": false,
+            "secondary_background": false
+          }
+        }
+      },
+      "block_order": [
+        "1646162521cbc5f7a6-1",
+        "59701869-ab62-416a-8dbb-be81ea007a8f",
+        "d6aba6e0-d819-4cbc-83d5-a0f3671272af"
+      ],
+      "settings": {
+        "heading": "",
+        "desktop_layout": "left",
+        "mobile_layout": "column"
+      }
     }
   },
   "order": [
     "main",
     "1646161358bb01bb75",
     "16461620882781df3c",
-    "16461622142d8cdfec"
+    "16461622142d8cdfec",
+    "1646162521fae323b9"
   ]
 }
