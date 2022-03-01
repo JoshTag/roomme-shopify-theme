@@ -65,7 +65,7 @@
       "type": "button-full-screen",
       "settings": {
         "link_label": "see more package options",
-        "url": "shopify:\/\/pages\/add-ons"
+        "url": "shopify:\/\/pages\/additional-elements"
       }
     }
   },
