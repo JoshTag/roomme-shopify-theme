@@ -23,8 +23,9 @@
         },
         "16461613584acbc383-2": {
           "type": "button",
+          "disabled": true,
           "settings": {
-            "button_label": "Button label",
+            "button_label": "learn more",
             "button_link": ""
           }
         }
@@ -40,46 +41,147 @@
         "layout": "image_first"
       }
     },
-    "16461613648bd868de": {
-      "type": "collection-list",
+    "16461620882781df3c": {
+      "type": "featured-product",
       "blocks": {
-        "16461613641a5811af-0": {
-          "type": "featured_collection",
+        "1646162088fb722da5-0": {
+          "type": "text",
           "settings": {
-            "collection": ""
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "body"
           }
         },
-        "16461613641a5811af-1": {
-          "type": "featured_collection",
+        "1646162088fb722da5-1": {
+          "type": "title",
           "settings": {
-            "collection": ""
           }
         },
-        "16461613641a5811af-2": {
-          "type": "featured_collection",
+        "1646162088fb722da5-2": {
+          "type": "text",
           "settings": {
-            "collection": ""
+            "text": "{{ section.settings.product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "1646162088fb722da5-3": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "1646162088fb722da5-4": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "1646162088fb722da5-5": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "1646162088fb722da5-6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "1646162088fb722da5-7": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
           }
         }
       },
       "block_order": [
-        "16461613641a5811af-0",
-        "16461613641a5811af-1",
-        "16461613641a5811af-2"
+        "1646162088fb722da5-0",
+        "1646162088fb722da5-1",
+        "1646162088fb722da5-2",
+        "1646162088fb722da5-3",
+        "1646162088fb722da5-4",
+        "1646162088fb722da5-5",
+        "1646162088fb722da5-6",
+        "1646162088fb722da5-7"
       ],
       "settings": {
-        "title": "Collections",
-        "image_ratio": "square",
-        "color_scheme": "background-1",
-        "swipe_on_mobile": false,
-        "image_padding": false,
-        "show_view_all": false
+        "product": "additional-elements-2br-2ba",
+        "secondary_background": false,
+        "hide_variants": false,
+        "enable_video_looping": false
+      }
+    },
+    "16461622142d8cdfec": {
+      "type": "featured-product",
+      "blocks": {
+        "164616221423994310-0": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "164616221423994310-1": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "164616221423994310-2": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "164616221423994310-3": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "164616221423994310-4": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "164616221423994310-5": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "164616221423994310-6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "164616221423994310-7": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "164616221423994310-0",
+        "164616221423994310-1",
+        "164616221423994310-2",
+        "164616221423994310-3",
+        "164616221423994310-4",
+        "164616221423994310-5",
+        "164616221423994310-6",
+        "164616221423994310-7"
+      ],
+      "settings": {
+        "product": "additional-elements-package-3br-3ba",
+        "secondary_background": false,
+        "hide_variants": false,
+        "enable_video_looping": false
       }
     }
   },
   "order": [
     "main",
     "1646161358bb01bb75",
-    "16461613648bd868de"
+    "16461620882781df3c",
+    "16461622142d8cdfec"
   ]
 }
