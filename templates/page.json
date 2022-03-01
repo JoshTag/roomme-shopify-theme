@@ -37,7 +37,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/good-soul-shop-DlO0yz4U67A-unsplash.jpg",
-        "height": "adapt",
+        "height": "small",
         "color_scheme": "background-1",
         "layout": "image_first"
       }
