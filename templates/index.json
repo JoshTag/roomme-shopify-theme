@@ -61,11 +61,11 @@
         "quote_image": "shopify:\/\/shop_images\/quote-image.png"
       }
     },
-    "1646084976f31a7382": {
+    "1646165797809eff8b": {
       "type": "button-full-screen",
       "settings": {
         "link_label": "see additional package options",
-        "url": "shopify:\/\/pages\/about-us"
+        "url": "shopify:\/\/pages\/additional-elements"
       }
     }
   },
@@ -77,6 +77,6 @@
     "16336271131b421c7f",
     "163362714757c170f6",
     "1633627159cdd3c0d6",
-    "1646084976f31a7382"
+    "1646165797809eff8b"
   ]
 }
