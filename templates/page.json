@@ -1,10 +1,48 @@
 {
   "sections": {
     "main": {
-      "type": "main-page"
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1646161358bb01bb75": {
+      "type": "image-with-text",
+      "blocks": {
+        "16461613584acbc383-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Additional Elements"
+          }
+        },
+        "16461613584acbc383-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Roomme has partnered with Park Place Property Management to create a package of Additional Elements to ensure a turnkey property. This package includes pieces for your Kitchen, Bathroom, Bedroom, etc. Interested? Please <a href=\"mailto:info@parkpl.co\">contact<\/a> Park Place Property Management for more details. <\/p>"
+          }
+        },
+        "16461613584acbc383-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16461613584acbc383-0",
+        "16461613584acbc383-1",
+        "16461613584acbc383-2"
+      ],
+      "settings": {
+        "height": "adapt",
+        "color_scheme": "background-1",
+        "layout": "image_first"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1646161358bb01bb75"
   ]
 }
