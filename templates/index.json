@@ -63,6 +63,7 @@
     },
     "1646165797809eff8b": {
       "type": "button-full-screen",
+      "disabled": true,
       "settings": {
         "link_label": "see additional package options",
         "url": "shopify:\/\/pages\/additional-elements"
