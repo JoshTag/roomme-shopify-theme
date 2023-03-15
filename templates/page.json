@@ -8,6 +8,7 @@
     },
     "1646161358bb01bb75": {
       "type": "image-with-text",
+      "disabled": true,
       "blocks": {
         "16461613584acbc383-0": {
           "type": "heading",
@@ -44,6 +45,7 @@
     },
     "1646162521fae323b9": {
       "type": "collage",
+      "disabled": true,
       "blocks": {
         "1646162521cbc5f7a6-1": {
           "type": "product",
