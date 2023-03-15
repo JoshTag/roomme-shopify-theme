@@ -12,7 +12,7 @@
         "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-003.jpg",
+            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-015.jpg",
             "title": "",
             "text": ""
           }
@@ -20,7 +20,7 @@
         "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-006.jpg",
+            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-012.jpg",
             "title": "",
             "text": ""
           }
@@ -28,8 +28,9 @@
         "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-2": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-014.jpg",
+            "title": "",
+            "text": ""
           }
         }
       },
