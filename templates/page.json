@@ -214,9 +214,9 @@
         "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-2": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
+            "button_label": "147 Lansdowne Avenue, Toronto",
             "button_link": "shopify:\/\/pages\/147-lansdowne-avenue-toronto",
-            "button_style_secondary": false
+            "button_style_secondary": true
           }
         }
       },
