@@ -85,11 +85,19 @@
         "desktop_layout": "left",
         "mobile_layout": "column"
       }
+    },
+    "8bcfe72d-c672-4391-ba54-bd2a8103702b": {
+      "type": "button-full-screen",
+      "settings": {
+        "link_label": "147 Lansdown Avenue, Toronto",
+        "url": "shopify:\/\/pages\/147-lansdowne-avenue-toronto"
+      }
     }
   },
   "order": [
     "main",
     "1646161358bb01bb75",
-    "1646162521fae323b9"
+    "1646162521fae323b9",
+    "8bcfe72d-c672-4391-ba54-bd2a8103702b"
   ]
 }
