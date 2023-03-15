@@ -8,7 +8,6 @@
     },
     "cc7a09c5-776e-4986-b230-dda9419cc630": {
       "type": "multicolumn",
-      "disabled": true,
       "blocks": {
         "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-0": {
           "type": "column",
@@ -53,7 +52,6 @@
     },
     "f8297c47-5882-42fb-8237-8d9efa0d28b8": {
       "type": "multicolumn",
-      "disabled": true,
       "blocks": {
         "template--15144063729861__f8297c47-5882-42fb-8237-8d9efa0d28b8-167890516931c86a0b-0": {
           "type": "column",
@@ -98,7 +96,6 @@
     },
     "ce1edcd9-877a-4f9d-b80a-c6c151878b49": {
       "type": "multicolumn",
-      "disabled": true,
       "blocks": {
         "template--15144063729861__ce1edcd9-877a-4f9d-b80a-c6c151878b49-167890516931c86a0b-0": {
           "type": "column",
@@ -143,7 +140,6 @@
     },
     "a2af5cdc-150e-4b84-abf8-8e65b1c9c11a": {
       "type": "multicolumn",
-      "disabled": true,
       "blocks": {
         "template--15144063729861__a2af5cdc-150e-4b84-abf8-8e65b1c9c11a-167890516931c86a0b-0": {
           "type": "column",
@@ -185,13 +181,6 @@
         "button_link": "",
         "swipe_on_mobile": false
       }
-    },
-    "8792afcf-883c-467c-9ae2-ee459f24f5c9": {
-      "type": "button-full-screen",
-      "settings": {
-        "link_label": "147 Lansdowne Avenue, Toronto",
-        "url": "shopify:\/\/pages\/147-lansdowne-avenue-toronto"
-      }
     }
   },
   "order": [
@@ -199,7 +188,6 @@
     "cc7a09c5-776e-4986-b230-dda9419cc630",
     "f8297c47-5882-42fb-8237-8d9efa0d28b8",
     "ce1edcd9-877a-4f9d-b80a-c6c151878b49",
-    "a2af5cdc-150e-4b84-abf8-8e65b1c9c11a",
-    "8792afcf-883c-467c-9ae2-ee459f24f5c9"
+    "a2af5cdc-150e-4b84-abf8-8e65b1c9c11a"
   ]
 }
