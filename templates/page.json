@@ -32,12 +32,21 @@
             "title": "",
             "text": ""
           }
+        },
+        "30b0a1df-4b1a-4b93-9774-1d40407d1020": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-017.jpg",
+            "title": "",
+            "text": ""
+          }
         }
       },
       "block_order": [
         "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-0",
         "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-1",
-        "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-2"
+        "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-2",
+        "30b0a1df-4b1a-4b93-9774-1d40407d1020"
       ],
       "settings": {
         "title": "",
