@@ -192,6 +192,43 @@
         "link_label": "147 Lansdowne Avenue, Toronto",
         "url": "shopify:\/\/pages\/147-lansdowne-avenue-toronto"
       }
+    },
+    "edb4728d-0ec0-48a8-b614-b6ef628952d8": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "shopify:\/\/pages\/147-lansdowne-avenue-toronto",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-0",
+        "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-1",
+        "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
     }
   },
   "order": [
@@ -200,6 +237,7 @@
     "f8297c47-5882-42fb-8237-8d9efa0d28b8",
     "ce1edcd9-877a-4f9d-b80a-c6c151878b49",
     "a2af5cdc-150e-4b84-abf8-8e65b1c9c11a",
-    "17f02deb-7d24-43c1-8d7a-e899bbd30417"
+    "17f02deb-7d24-43c1-8d7a-e899bbd30417",
+    "edb4728d-0ec0-48a8-b614-b6ef628952d8"
   ]
 }
