@@ -6,98 +6,51 @@
       "settings": {
       }
     },
-    "1646161358bb01bb75": {
-      "type": "image-with-text",
-      "disabled": true,
+    "cc7a09c5-776e-4986-b230-dda9419cc630": {
+      "type": "multicolumn",
       "blocks": {
-        "16461613584acbc383-0": {
-          "type": "heading",
+        "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-0": {
+          "type": "column",
           "settings": {
-            "heading": "We've got you covered on the essentials, now how about some extras?"
+            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-003.jpg",
+            "title": "",
+            "text": ""
           }
         },
-        "16461613584acbc383-1": {
-          "type": "text",
+        "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-1": {
+          "type": "column",
           "settings": {
-            "text": "<p>Roomme has partnered with <a href=\"https:\/\/parkpl.co\/\" target=\"_blank\" title=\"https:\/\/parkpl.co\/\">Park Place Property Management<\/a> to create a package of Additional Elements. This package includes, but is not limited to, items such as utensils, pots\/pans, bedding, linens, and cleaning supplies to ensure a turnkey property. Please <a href=\"mailto:info@parkpl.co\">contact<\/a> Park Place Property Management for more details. <\/p>"
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
           }
         },
-        "16461613584acbc383-2": {
-          "type": "button",
-          "disabled": true,
+        "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-2": {
+          "type": "column",
           "settings": {
-            "button_label": "learn more",
-            "button_link": ""
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
           }
         }
       },
       "block_order": [
-        "16461613584acbc383-0",
-        "16461613584acbc383-1",
-        "16461613584acbc383-2"
+        "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-0",
+        "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-1",
+        "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/pexels-sarah-chai-7262999.jpg",
-        "height": "large",
-        "color_scheme": "background-1",
-        "layout": "image_first"
-      }
-    },
-    "1646162521fae323b9": {
-      "type": "collage",
-      "disabled": true,
-      "blocks": {
-        "1646162521cbc5f7a6-1": {
-          "type": "product",
-          "settings": {
-            "product": "additional-elements-1",
-            "second_image": false,
-            "image_padding": false,
-            "secondary_background": false
-          }
-        },
-        "59701869-ab62-416a-8dbb-be81ea007a8f": {
-          "type": "product",
-          "settings": {
-            "product": "additional-elements-2br-2ba",
-            "second_image": false,
-            "image_padding": false,
-            "secondary_background": false
-          }
-        },
-        "d6aba6e0-d819-4cbc-83d5-a0f3671272af": {
-          "type": "product",
-          "settings": {
-            "product": "additional-elements-package-3br-3ba",
-            "second_image": false,
-            "image_padding": false,
-            "secondary_background": false
-          }
-        }
-      },
-      "block_order": [
-        "1646162521cbc5f7a6-1",
-        "59701869-ab62-416a-8dbb-be81ea007a8f",
-        "d6aba6e0-d819-4cbc-83d5-a0f3671272af"
-      ],
-      "settings": {
-        "heading": "",
-        "desktop_layout": "left",
-        "mobile_layout": "column"
-      }
-    },
-    "8bcfe72d-c672-4391-ba54-bd2a8103702b": {
-      "type": "button-full-screen",
-      "settings": {
-        "link_label": "147 Lansdown Avenue, Toronto",
-        "url": "shopify:\/\/pages\/147-lansdowne-avenue-toronto"
+        "title": "Multicolumn",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "swipe_on_mobile": false
       }
     }
   },
   "order": [
     "main",
-    "1646161358bb01bb75",
-    "1646162521fae323b9",
-    "8bcfe72d-c672-4391-ba54-bd2a8103702b"
+    "cc7a09c5-776e-4986-b230-dda9419cc630"
   ]
 }
