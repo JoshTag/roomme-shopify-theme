@@ -38,12 +38,12 @@
         "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-2"
       ],
       "settings": {
-        "title": "Multicolumn",
+        "title": "",
         "image_width": "full",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "column_alignment": "left",
         "background_style": "primary",
-        "button_label": "Button label",
+        "button_label": "",
         "button_link": "",
         "swipe_on_mobile": false
       }
