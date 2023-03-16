@@ -225,6 +225,50 @@
         "button_link": "",
         "swipe_on_mobile": false
       }
+    },
+    "a317ee7b-965a-46fb-b7a5-b042182f8f22": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--16018708594885__a317ee7b-965a-46fb-b7a5-b042182f8f22-167894507815f8b906-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/258_Crawford_Basement-001.jpg",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--16018708594885__a317ee7b-965a-46fb-b7a5-b042182f8f22-167894507815f8b906-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/258_Crawford_Basement-008.jpg",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--16018708594885__a317ee7b-965a-46fb-b7a5-b042182f8f22-167894507815f8b906-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/258_Crawford_Basement-019.jpg",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16018708594885__a317ee7b-965a-46fb-b7a5-b042182f8f22-167894507815f8b906-0",
+        "template--16018708594885__a317ee7b-965a-46fb-b7a5-b042182f8f22-167894507815f8b906-1",
+        "template--16018708594885__a317ee7b-965a-46fb-b7a5-b042182f8f22-167894507815f8b906-2"
+      ],
+      "settings": {
+        "title": "",
+        "image_width": "full",
+        "image_ratio": "square",
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false
+      }
     }
   },
   "order": [
@@ -233,6 +277,7 @@
     "f8297c47-5882-42fb-8237-8d9efa0d28b8",
     "ce1edcd9-877a-4f9d-b80a-c6c151878b49",
     "a2af5cdc-150e-4b84-abf8-8e65b1c9c11a",
-    "55babd39-e545-4039-b566-863d598b0e98"
+    "55babd39-e545-4039-b566-863d598b0e98",
+    "a317ee7b-965a-46fb-b7a5-b042182f8f22"
   ]
 }
