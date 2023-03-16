@@ -170,8 +170,8 @@
           "type": "button",
           "settings": {
             "button_label": "2314 Lakeshore Boulevard W, Toronto",
-            "button_link": "",
-            "button_style_secondary": false
+            "button_link": "shopify:\/\/pages\/1-2314-lakeshore-boulevard-w-toronto",
+            "button_style_secondary": true
           }
         }
       },
