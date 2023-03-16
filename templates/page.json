@@ -150,7 +150,7 @@
           "type": "button",
           "settings": {
             "button_label": "14 York Street, Toronto",
-            "button_link": "",
+            "button_link": "shopify:\/\/pages\/14-york-street-toronto",
             "button_style_secondary": true
           }
         }
