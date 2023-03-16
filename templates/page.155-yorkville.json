@@ -12,7 +12,7 @@
         "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-015.jpg",
+            "image": "shopify:\/\/shop_images\/614-155_Yorkville_Ave-002.jpg",
             "title": "",
             "text": ""
           }
@@ -20,7 +20,7 @@
         "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-012.jpg",
+            "image": "shopify:\/\/shop_images\/614-155_Yorkville_Ave-001.jpg",
             "title": "",
             "text": ""
           }
@@ -28,7 +28,7 @@
         "template--15144063729861__cc7a09c5-776e-4986-b230-dda9419cc630-1678903638d6d896ed-2": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-014.jpg",
+            "image": "shopify:\/\/shop_images\/614-155_Yorkville_Ave-003.jpg",
             "title": "",
             "text": ""
           }
@@ -56,7 +56,7 @@
         "template--15144063729861__f8297c47-5882-42fb-8237-8d9efa0d28b8-167890516931c86a0b-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-017.jpg",
+            "image": "shopify:\/\/shop_images\/614-155_Yorkville_Ave-005.jpg",
             "title": "",
             "text": ""
           }
@@ -64,7 +64,7 @@
         "template--15144063729861__f8297c47-5882-42fb-8237-8d9efa0d28b8-167890516931c86a0b-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-018.jpg",
+            "image": "shopify:\/\/shop_images\/614-155_Yorkville_Ave-019.jpg",
             "title": "",
             "text": ""
           }
@@ -72,7 +72,7 @@
         "template--15144063729861__f8297c47-5882-42fb-8237-8d9efa0d28b8-167890516931c86a0b-2": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-014.jpg",
+            "image": "shopify:\/\/shop_images\/614-155_Yorkville_Ave-014.jpg",
             "title": "",
             "text": ""
           }
@@ -96,6 +96,7 @@
     },
     "ce1edcd9-877a-4f9d-b80a-c6c151878b49": {
       "type": "multicolumn",
+      "disabled": true,
       "blocks": {
         "template--15144063729861__ce1edcd9-877a-4f9d-b80a-c6c151878b49-167890516931c86a0b-0": {
           "type": "column",
@@ -140,6 +141,7 @@
     },
     "a2af5cdc-150e-4b84-abf8-8e65b1c9c11a": {
       "type": "multicolumn",
+      "disabled": true,
       "blocks": {
         "template--15144063729861__a2af5cdc-150e-4b84-abf8-8e65b1c9c11a-167890516931c86a0b-0": {
           "type": "column",
