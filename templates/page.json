@@ -130,7 +130,7 @@
           "type": "button",
           "settings": {
             "button_label": "56 Cedarvale Avenue, Toronto",
-            "button_link": "",
+            "button_link": "shopify:\/\/pages\/56-cedarvale-avenue-toronto",
             "button_style_secondary": true
           }
         }
