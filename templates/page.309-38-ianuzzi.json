@@ -1,0 +1,72 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "edb4728d-0ec0-48a8-b614-b6ef628952d8": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "147 Lansdowne Avenue, Toronto",
+            "button_link": "shopify:\/\/pages\/147-lansdowne-avenue-toronto",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-0",
+        "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-1",
+        "template--15144063729861__edb4728d-0ec0-48a8-b614-b6ef628952d8-1678910072e5820c15-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    },
+    "afee0e8f-84e1-4fee-803b-6f991f09b561": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15144063729861__afee0e8f-84e1-4fee-803b-6f991f09b561-16789415465c841d95-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "155 Yorkville Avenue, Toronto",
+            "button_link": "shopify:\/\/pages\/155-yorkville-avenue-toronto",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "template--15144063729861__afee0e8f-84e1-4fee-803b-6f991f09b561-16789415465c841d95-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "edb4728d-0ec0-48a8-b614-b6ef628952d8",
+    "afee0e8f-84e1-4fee-803b-6f991f09b561"
+  ]
+}
