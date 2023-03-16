@@ -162,6 +162,26 @@
         "color_scheme": "background-1",
         "full_width": true
       }
+    },
+    "00308670-3ee7-415e-973d-f4e24c7de850": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15144063729861__00308670-3ee7-415e-973d-f4e24c7de850-1678991978e627c018-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "2314 Lakeshore Boulevard W, Toronto",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15144063729861__00308670-3ee7-415e-973d-f4e24c7de850-1678991978e627c018-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
     }
   },
   "order": [
@@ -172,6 +192,7 @@
     "987b757c-056f-470e-aa53-f881d7738c73",
     "cdbcd115-5887-44b3-89c3-2cdfee096f22",
     "d826ae88-3e25-40ac-9be7-361a906656af",
-    "0943cadc-bb58-4150-a587-adb5b9ff2a12"
+    "0943cadc-bb58-4150-a587-adb5b9ff2a12",
+    "00308670-3ee7-415e-973d-f4e24c7de850"
   ]
 }
