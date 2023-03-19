@@ -82,7 +82,7 @@
         "template--15144063729861__ce1edcd9-877a-4f9d-b80a-c6c151878b49-167890516931c86a0b-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-006.jpg",
+            "image": "shopify:\/\/shop_images\/1-41.jpg",
             "title": "",
             "text": ""
           }
@@ -90,15 +90,7 @@
         "template--15144063729861__ce1edcd9-877a-4f9d-b80a-c6c151878b49-167890516931c86a0b-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-005.jpg",
-            "title": "",
-            "text": ""
-          }
-        },
-        "template--15144063729861__ce1edcd9-877a-4f9d-b80a-c6c151878b49-167890516931c86a0b-2": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/147_Landsdowne_Ave-024.jpg",
+            "image": "shopify:\/\/shop_images\/1-47.jpg",
             "title": "",
             "text": ""
           }
@@ -106,15 +98,14 @@
       },
       "block_order": [
         "template--15144063729861__ce1edcd9-877a-4f9d-b80a-c6c151878b49-167890516931c86a0b-0",
-        "template--15144063729861__ce1edcd9-877a-4f9d-b80a-c6c151878b49-167890516931c86a0b-1",
-        "template--15144063729861__ce1edcd9-877a-4f9d-b80a-c6c151878b49-167890516931c86a0b-2"
+        "template--15144063729861__ce1edcd9-877a-4f9d-b80a-c6c151878b49-167890516931c86a0b-1"
       ],
       "settings": {
         "title": "",
         "image_width": "full",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "column_alignment": "left",
-        "background_style": "primary",
+        "background_style": "none",
         "button_label": "",
         "button_link": "",
         "swipe_on_mobile": false
