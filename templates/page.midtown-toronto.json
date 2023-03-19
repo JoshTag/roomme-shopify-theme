@@ -55,7 +55,7 @@
         "template--15144063729861__f8297c47-5882-42fb-8237-8d9efa0d28b8-167890516931c86a0b-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1-54.jpg",
+            "image": "shopify:\/\/shop_images\/Untitled_cab4058e-2586-4c2a-a3f1-ecf4cf42d65f.png",
             "title": "",
             "text": ""
           }
@@ -68,7 +68,7 @@
       "settings": {
         "title": "",
         "image_width": "full",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "column_alignment": "left",
         "background_style": "none",
         "button_label": "",
