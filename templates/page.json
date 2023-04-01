@@ -202,6 +202,26 @@
         "color_scheme": "background-1",
         "full_width": true
       }
+    },
+    "97aab448-2814-47c1-a889-8429ddf493f8": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15144063729861__97aab448-2814-47c1-a889-8429ddf493f8-1680314729d6fc8464-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Friday Harbour Resort, Innisfil: Unit 1",
+            "button_link": "shopify:\/\/pages\/friday-harbour-unit-1",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "template--15144063729861__97aab448-2814-47c1-a889-8429ddf493f8-1680314729d6fc8464-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
     }
   },
   "order": [
@@ -214,6 +234,7 @@
     "d826ae88-3e25-40ac-9be7-361a906656af",
     "0943cadc-bb58-4150-a587-adb5b9ff2a12",
     "00308670-3ee7-415e-973d-f4e24c7de850",
-    "c31fdb27-f52d-4b8a-86db-c98dcec7b00f"
+    "c31fdb27-f52d-4b8a-86db-c98dcec7b00f",
+    "97aab448-2814-47c1-a889-8429ddf493f8"
   ]
 }
