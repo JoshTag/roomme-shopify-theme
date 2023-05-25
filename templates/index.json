@@ -40,8 +40,8 @@
       "type": "button-full-screen",
       "disabled": true,
       "settings": {
-        "link_label": "get started",
-        "url": "shopify:\/\/collections\/packages"
+        "link_label": "contact us now",
+        "url": "shopify:\/\/pages\/contact-us"
       }
     },
     "163362714757c170f6": {
