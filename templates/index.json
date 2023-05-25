@@ -1,5 +1,12 @@
 {
   "sections": {
+    "16336271131b421c7f": {
+      "type": "button-full-screen",
+      "settings": {
+        "link_label": "contact us now",
+        "url": "shopify:\/\/pages\/contact-us"
+      }
+    },
     "16333514059df127fe": {
       "type": "hero",
       "settings": {
@@ -36,14 +43,6 @@
         "step_three_paragraph": "Roomme provides white glove service with every delivery. Your furniture is delivered to your door, assembled, and installed."
       }
     },
-    "16336271131b421c7f": {
-      "type": "button-full-screen",
-      "disabled": true,
-      "settings": {
-        "link_label": "contact us now",
-        "url": "shopify:\/\/pages\/contact-us"
-      }
-    },
     "163362714757c170f6": {
       "type": "packages",
       "settings": {
@@ -71,11 +70,11 @@
     }
   },
   "order": [
+    "16336271131b421c7f",
     "16333514059df127fe",
     "1633627123b5fd89a6",
     "16336270333cc4796a",
     "1633627171dc5fbd62",
-    "16336271131b421c7f",
     "163362714757c170f6",
     "1633627159cdd3c0d6",
     "1646165797809eff8b"
