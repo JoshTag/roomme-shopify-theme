@@ -13,7 +13,7 @@
           "type": "column",
           "settings": {
             "title": "Short-Term Rentals",
-            "text": "<p>Using modern furniture and decor, Roomme will design your investment property in a way that appeals to a wide demographic and yields the highest return. Our team provides white-glove delivery, assembly, and installation. <\/p>"
+            "text": "<p>Using modern furniture and decor, Roomme will design your investment property in order to appeal to a wide demographic and yield the highest return. Our team provides white-glove delivery, assembly, and installation. <\/p>"
           }
         },
         "template--16094120771781__4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b-1688592180fc6a1de2-1": {
@@ -27,7 +27,7 @@
           "type": "column",
           "settings": {
             "title": "Luxury Interior Design",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "text": ""
           }
         }
       },
