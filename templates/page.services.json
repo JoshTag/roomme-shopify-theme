@@ -6,197 +6,50 @@
       "settings": {
       }
     },
-    "afee0e8f-84e1-4fee-803b-6f991f09b561": {
-      "type": "rich-text",
+    "4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b": {
+      "type": "multicolumn",
       "blocks": {
-        "template--15144063729861__afee0e8f-84e1-4fee-803b-6f991f09b561-16789415465c841d95-2": {
-          "type": "button",
+        "template--16094120771781__4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b-1688592180fc6a1de2-0": {
+          "type": "column",
           "settings": {
-            "button_label": "Yorkville Avenue, Toronto",
-            "button_link": "shopify:\/\/pages\/155-yorkville-avenue-toronto",
-            "button_style_secondary": true
+            "title": "Short-Term Rentals",
+            "text": "<p>Using modern furniture and decor, Roomme will design your investment property in a way that appeals to a wide demographic and yields the highest return. <\/p>"
+          }
+        },
+        "template--16094120771781__4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b-1688592180fc6a1de2-1": {
+          "type": "column",
+          "settings": {
+            "title": "Virtual Design",
+            "text": "<p>Work alongside our in-house designer to receive virtual assistance with design direction, budgeting, and furniture selection.<\/p>"
+          }
+        },
+        "template--16094120771781__4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b-1688592180fc6a1de2-2": {
+          "type": "column",
+          "settings": {
+            "title": "Luxury Interior Design",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
           }
         }
       },
       "block_order": [
-        "template--15144063729861__afee0e8f-84e1-4fee-803b-6f991f09b561-16789415465c841d95-2"
+        "template--16094120771781__4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b-1688592180fc6a1de2-0",
+        "template--16094120771781__4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b-1688592180fc6a1de2-1",
+        "template--16094120771781__4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b-1688592180fc6a1de2-2"
       ],
       "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
-    "edeb296b-8ce6-4304-b1ae-0d024930305b": {
-      "type": "rich-text",
-      "blocks": {
-        "template--15144063729861__edeb296b-8ce6-4304-b1ae-0d024930305b-16789427396b90df3b-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Ianuzzi Street, Toronto: Unit 1",
-            "button_link": "shopify:\/\/pages\/38-ianuzzi-street-toronto-unit-1",
-            "button_style_secondary": true
-          }
-        }
-      },
-      "block_order": [
-        "template--15144063729861__edeb296b-8ce6-4304-b1ae-0d024930305b-16789427396b90df3b-2"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
-    "987b757c-056f-470e-aa53-f881d7738c73": {
-      "type": "rich-text",
-      "blocks": {
-        "template--15144063729861__987b757c-056f-470e-aa53-f881d7738c73-16789427396b90df3b-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Ianuzzi Street, Toronto: Unit 2",
-            "button_link": "shopify:\/\/pages\/38-ianuzzi-street-toronto-unit-2",
-            "button_style_secondary": true
-          }
-        }
-      },
-      "block_order": [
-        "template--15144063729861__987b757c-056f-470e-aa53-f881d7738c73-16789427396b90df3b-2"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
-    "cdbcd115-5887-44b3-89c3-2cdfee096f22": {
-      "type": "rich-text",
-      "blocks": {
-        "template--15144063729861__cdbcd115-5887-44b3-89c3-2cdfee096f22-16789427396b90df3b-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Crawford Street, Toronto",
-            "button_link": "shopify:\/\/pages\/258-crawford-street-toronto",
-            "button_style_secondary": true
-          }
-        }
-      },
-      "block_order": [
-        "template--15144063729861__cdbcd115-5887-44b3-89c3-2cdfee096f22-16789427396b90df3b-2"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
-    "d826ae88-3e25-40ac-9be7-361a906656af": {
-      "type": "rich-text",
-      "blocks": {
-        "template--15144063729861__d826ae88-3e25-40ac-9be7-361a906656af-16789427396b90df3b-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Cedarvale Avenue, Toronto",
-            "button_link": "shopify:\/\/pages\/56-cedarvale-avenue-toronto",
-            "button_style_secondary": true
-          }
-        }
-      },
-      "block_order": [
-        "template--15144063729861__d826ae88-3e25-40ac-9be7-361a906656af-16789427396b90df3b-2"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
-    "0943cadc-bb58-4150-a587-adb5b9ff2a12": {
-      "type": "rich-text",
-      "blocks": {
-        "template--15144063729861__0943cadc-bb58-4150-a587-adb5b9ff2a12-16789427396b90df3b-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "York Street, Toronto",
-            "button_link": "shopify:\/\/pages\/14-york-street-toronto",
-            "button_style_secondary": true
-          }
-        }
-      },
-      "block_order": [
-        "template--15144063729861__0943cadc-bb58-4150-a587-adb5b9ff2a12-16789427396b90df3b-2"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
-    "00308670-3ee7-415e-973d-f4e24c7de850": {
-      "type": "rich-text",
-      "blocks": {
-        "template--15144063729861__00308670-3ee7-415e-973d-f4e24c7de850-1678991978e627c018-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Lakeshore Boulevard W, Toronto",
-            "button_link": "shopify:\/\/pages\/1-2314-lakeshore-boulevard-w-toronto",
-            "button_style_secondary": true
-          }
-        }
-      },
-      "block_order": [
-        "template--15144063729861__00308670-3ee7-415e-973d-f4e24c7de850-1678991978e627c018-2"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
-    "c31fdb27-f52d-4b8a-86db-c98dcec7b00f": {
-      "type": "rich-text",
-      "blocks": {
-        "template--15144063729861__c31fdb27-f52d-4b8a-86db-c98dcec7b00f-16792609018d22c762-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Midtown Toronto",
-            "button_link": "shopify:\/\/pages\/midtown-toronto",
-            "button_style_secondary": true
-          }
-        }
-      },
-      "block_order": [
-        "template--15144063729861__c31fdb27-f52d-4b8a-86db-c98dcec7b00f-16792609018d22c762-2"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
-    "97aab448-2814-47c1-a889-8429ddf493f8": {
-      "type": "rich-text",
-      "blocks": {
-        "template--15144063729861__97aab448-2814-47c1-a889-8429ddf493f8-1680314729d6fc8464-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Friday Harbour Resort, Innisfil: Unit 1",
-            "button_link": "shopify:\/\/pages\/friday-harbour-unit-1",
-            "button_style_secondary": true
-          }
-        }
-      },
-      "block_order": [
-        "template--15144063729861__97aab448-2814-47c1-a889-8429ddf493f8-1680314729d6fc8464-2"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
+        "title": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Contact Us Now",
+        "button_link": "",
+        "swipe_on_mobile": false
       }
     }
   },
   "order": [
     "main",
-    "afee0e8f-84e1-4fee-803b-6f991f09b561",
-    "edeb296b-8ce6-4304-b1ae-0d024930305b",
-    "987b757c-056f-470e-aa53-f881d7738c73",
-    "cdbcd115-5887-44b3-89c3-2cdfee096f22",
-    "d826ae88-3e25-40ac-9be7-361a906656af",
-    "0943cadc-bb58-4150-a587-adb5b9ff2a12",
-    "00308670-3ee7-415e-973d-f4e24c7de850",
-    "c31fdb27-f52d-4b8a-86db-c98dcec7b00f",
-    "97aab448-2814-47c1-a889-8429ddf493f8"
+    "4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b"
   ]
 }
