@@ -2,6 +2,7 @@
   "sections": {
     "16336271131b421c7f": {
       "type": "button-full-screen",
+      "disabled": true,
       "settings": {
         "link_label": "contact us now",
         "url": "shopify:\/\/pages\/contact-us"
