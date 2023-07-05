@@ -45,6 +45,7 @@
     },
     "163362714757c170f6": {
       "type": "packages",
+      "disabled": true,
       "settings": {
         "package_collection": "packages",
         "button_label": "select package"
@@ -62,10 +63,9 @@
     },
     "1646165797809eff8b": {
       "type": "button-full-screen",
-      "disabled": true,
       "settings": {
-        "link_label": "see additional package options",
-        "url": "shopify:\/\/pages\/additional-elements"
+        "link_label": "contact us now to get a quote",
+        "url": "shopify:\/\/pages\/contact-us"
       }
     }
   },
