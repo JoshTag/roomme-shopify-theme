@@ -42,14 +42,22 @@
         "image_ratio": "adapt",
         "column_alignment": "left",
         "background_style": "primary",
-        "button_label": "Contact Us Now",
+        "button_label": "",
         "button_link": "",
         "swipe_on_mobile": false
+      }
+    },
+    "5ea475ef-b759-4fdb-a76b-68eedf7b1587": {
+      "type": "button-full-screen",
+      "settings": {
+        "link_label": "",
+        "url": ""
       }
     }
   },
   "order": [
     "main",
-    "4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b"
+    "4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b",
+    "5ea475ef-b759-4fdb-a76b-68eedf7b1587"
   ]
 }
