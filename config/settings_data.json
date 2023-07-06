@@ -16,11 +16,10 @@
         "blocks": {
           "dcf1d584-2be0-46bc-bd5b-62225ce9c42c": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
-              "text": "Roomme is now offering virtual design and luxury interior design. Click to learn more.",
+              "text": "Roomme is now offering virtual design. Click to learn more.",
               "color_scheme": "accent-1",
-              "link": ""
+              "link": "shopify:\/\/pages\/services"
             }
           },
           "dfd044d5-24ea-460e-b2d7-764eae26ea61": {
