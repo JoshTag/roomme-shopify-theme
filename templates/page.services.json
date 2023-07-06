@@ -27,7 +27,7 @@
           "type": "column",
           "settings": {
             "title": "Luxury Interior Design",
-            "text": "<p>With a focus on furnishings, all of our pieces are manufactured in Europe where they are meticulously designed and crafted. Our designers will work with you to create a space full of character, comfort, and luxury. <\/p>"
+            "text": "<p>With a focus on furnishings, all of our pieces are manufactured in Europe where they are meticulously designed and crafted. Our designers will work with you to create a space full of Character, comfort, and luxury. <\/p>"
           }
         }
       },
@@ -47,17 +47,17 @@
         "swipe_on_mobile": false
       }
     },
-    "5ea475ef-b759-4fdb-a76b-68eedf7b1587": {
+    "611dd8fe-1503-41b3-9ca2-282b53d42d57": {
       "type": "button-full-screen",
       "settings": {
-        "link_label": "",
-        "url": ""
+        "link_label": "contact us now",
+        "url": "shopify:\/\/pages\/contact-us"
       }
     }
   },
   "order": [
     "main",
     "4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b",
-    "5ea475ef-b759-4fdb-a76b-68eedf7b1587"
+    "611dd8fe-1503-41b3-9ca2-282b53d42d57"
   ]
 }
