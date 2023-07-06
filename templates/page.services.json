@@ -8,6 +8,7 @@
     },
     "c2a052c4-3410-40e5-98c5-0630cb4d334c": {
       "type": "hero",
+      "disabled": true,
       "settings": {
         "title": "",
         "subheader": "",
@@ -35,9 +36,8 @@
         },
         "template--16094120771781__4b41a174-0a8a-4e2c-b0c4-a6204bc41d3b-1688592180fc6a1de2-2": {
           "type": "column",
-          "disabled": true,
           "settings": {
-            "title": "Luxury Interior Design",
+            "title": "COMING SOON: Luxury Interior Design",
             "text": "<p>With a focus on furnishings, all of our pieces are manufactured in Europe where they are meticulously designed and crafted. Our designers will work with you to create a space full of Character, comfort, and luxury. <\/p>"
           }
         }
