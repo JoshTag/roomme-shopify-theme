@@ -31,11 +31,11 @@
     position: absolute;
     content: '\2192';
     top: 50%;
-    right: 50%;
+    right: 0%;
     width: 0px;
     font-size: 20px;
     overflow: hidden;
-    transform: translate(70px, -18px);
+    transform: translate(0px, -18px);
     transition: 0.3s;
     color: #fff;
 }
@@ -47,6 +47,7 @@
 
 .button-fullscreen:hover .button-fullscreen__text:before {
     width: 40px;
+    transform: translate(40px, -18px);
 }
 
 .button-fullscreen__text {
