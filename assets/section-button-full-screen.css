@@ -42,6 +42,7 @@
 
 .button-fullscreen:hover .button-fullscreen__text {
     color: #fff;
+    transform: translateX(-20px);
 }
 
 .button-fullscreen__text:hover:before {
