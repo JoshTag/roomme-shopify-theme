@@ -53,7 +53,7 @@
     transition: 0.3s;
 }
 
-.button-fullscreen__text:hover .button-fullscreen__text {
+.button-fullscreen__text:hover .button-fullscreen__text:before {
     transform: translateX(-20px);
     color: #fff
 }
