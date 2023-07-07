@@ -37,6 +37,9 @@
     overflow: hidden;
     transform: translate(70px, -18px);
     transition: 0.3s;
+}
+
+.button-fullscreen__text:hover {
     color: #fff
 }
 
