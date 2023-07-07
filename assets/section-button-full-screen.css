@@ -47,7 +47,7 @@
 
 .button-fullscreen:hover .button-fullscreen__text:before {
     width: 40px;
-    transform: translate(40px, -18px);
+    transform: translate(100%, -18px);
 }
 
 .button-fullscreen__text {
