@@ -27,7 +27,7 @@
     cursor: pointer;
 }
 
-.button-fullscreen:before {
+.button-fullscreen__text:before {
     position: absolute;
     content: '\2192';
     top: 50%;
@@ -40,7 +40,7 @@
     color: #fff
 }
 
-.button-fullscreen:hover:before {
+.button-fullscreen__text:hover:before {
     width: 40px;
 }
 
@@ -48,7 +48,7 @@
     transition: 0.3s;
 }
 
-.button-fullscreen:hover .button-fullscreen__text {
+.button-fullscreen__text:hover .button-fullscreen__text {
     transform: translateX(-20px);
     color: #fff
 }
