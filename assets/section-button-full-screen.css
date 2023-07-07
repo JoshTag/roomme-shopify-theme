@@ -39,8 +39,8 @@
     transition: 0.3s;
 }
 
-.button-fullscreen__text:hover {
-    color: #fff
+.button-fullscreen:hover .button-fullscreen__text {
+    color: #363636;
 }
 
 .button-fullscreen__text:hover:before {
