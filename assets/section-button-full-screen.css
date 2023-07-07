@@ -40,7 +40,7 @@
 }
 
 .button-fullscreen:hover .button-fullscreen__text {
-    color: #363636;
+    color: #fff;
 }
 
 .button-fullscreen__text:hover:before {
