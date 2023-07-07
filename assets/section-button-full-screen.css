@@ -45,7 +45,7 @@
     transform: translateX(-20px);
 }
 
-.button-fullscreen__text:hover .button-fullscreen__text:before {
+.button-fullscreen:hover .button-fullscreen__text:before {
     width: 40px;
 }
 
