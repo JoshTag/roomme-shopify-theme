@@ -46,6 +46,7 @@
     },
     "163362714757c170f6": {
       "type": "packages",
+      "disabled": true,
       "settings": {
         "package_collection": "packages",
         "button_label": "select package"
