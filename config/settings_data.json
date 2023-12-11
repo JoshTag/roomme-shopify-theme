@@ -16,6 +16,7 @@
         "blocks": {
           "dcf1d584-2be0-46bc-bd5b-62225ce9c42c": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Roomme is now offering virtual design. Click to learn more.",
               "color_scheme": "accent-1",
