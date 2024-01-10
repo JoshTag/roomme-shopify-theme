@@ -15,7 +15,9 @@
         "subheader": "furnishing your investment property has never been easier",
         "hero_image": "shopify:\/\/shop_images\/spacejoy-EVjqpcn79AM-unsplash2.jpg",
         "header_color": "#363636",
-        "subheader_color": "#363636"
+        "subheader_color": "#363636",
+        "button_label": "Contact now for quote",
+        "button_url": "shopify:\/\/pages\/contact-us"
       }
     },
     "1633627123b5fd89a6": {
