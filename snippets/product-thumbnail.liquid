@@ -59,7 +59,7 @@
   {%- endif -%}
 </noscript>
 
-<modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
+<modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}" style="border: none !important;">
   <span class="product__media-icon motion-reduce" aria-hidden="true">
     {%- liquid
       case media.media_type
@@ -87,6 +87,7 @@
       width="576"
       height="{{ 576 | divided_by: media.preview_image.aspect_ratio | ceil }}"
       alt="{{ media.preview_image.alt | escape }}"
+      style="mix-blend-mode: darken;"
     >
   </div>
   <button class="product__media-toggle" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">

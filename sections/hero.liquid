@@ -5,6 +5,7 @@
     <h1 class="hero__h1" style="color: {{ section.settings.header_color }}">{{ section.settings.title }}</h1>
     <p class="hero__p" style="color: {{ section.settings.subheader_color }}">{{ section.settings.subheader }}</p>
   </div>
+  <a class="hero__cta" href="{{ section.settings.button_url }}">{{ section.settings.button_label }}</a>
 </div>
 
 {% schema %}
@@ -30,13 +31,23 @@
       "type": "color",
       "id": "header_color",
       "label": "Header color",
-	  "default": "#fff"
+	     "default": "#fff"
     },
     {
       "type": "color",
       "id": "subheader_color",
       "label": "Subheader color",
 	  "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button url"
     }
   ],
   "presets": [

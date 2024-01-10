@@ -3,12 +3,12 @@
     "banner": {
       "type": "main-collection-banner"
     },
-    "product-grid": {
-      "type": "main-collection-product-grid"
+    "collection": {
+      "type": "collection-page"
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "collection"
   ]
 }
