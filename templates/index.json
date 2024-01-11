@@ -70,6 +70,13 @@
         "link_label": "contact us now to get a quote",
         "url": "shopify:\/\/pages\/contact-us"
       }
+    },
+    "button_full_screen_VGg7zp": {
+      "type": "button-full-screen",
+      "settings": {
+        "link_label": "all furniture",
+        "url": "shopify:\/\/collections\/all-furniture"
+      }
     }
   },
   "order": [
@@ -80,6 +87,7 @@
     "1633627171dc5fbd62",
     "163362714757c170f6",
     "1633627159cdd3c0d6",
-    "1646165797809eff8b"
+    "1646165797809eff8b",
+    "button_full_screen_VGg7zp"
   ]
 }
