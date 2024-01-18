@@ -11,12 +11,12 @@
     "16333514059df127fe": {
       "type": "hero",
       "settings": {
-        "title": "WE FURNISH, YOU PROFIT.",
-        "subheader": "furnishing your investment property has never been easier",
-        "hero_image": "shopify:\/\/shop_images\/spacejoy-EVjqpcn79AM-unsplash2.jpg",
-        "header_color": "#363636",
-        "subheader_color": "#363636",
-        "button_label": "Contact now for quote",
+        "title": "Indulge in the Art of Living.",
+        "subheader": "Your sanctuary awaits.",
+        "hero_image": "shopify:\/\/shop_images\/plissandro_copy.png",
+        "header_color": "#f0efed",
+        "subheader_color": "#f3f3f3",
+        "button_label": "Contact Us Now",
         "button_url": "shopify:\/\/pages\/contact-us"
       }
     },

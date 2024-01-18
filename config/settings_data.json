@@ -43,10 +43,10 @@
       "header": {
         "type": "header",
         "settings": {
-          "color_scheme": "background-1",
-          "logo": "shopify:\/\/shop_images\/logo.png",
-          "logo_width": 100,
-          "logo_position": "middle-left",
+          "color_scheme": "accent-2",
+          "logo": "shopify:\/\/shop_images\/ROOMME_LOGO.png",
+          "logo_width": 180,
+          "logo_position": "top-center",
           "menu": "home-menu",
           "show_line_separator": true,
           "enable_sticky_header": false
