@@ -29,6 +29,7 @@
     },
     "16336270333cc4796a": {
       "type": "half-image-text",
+      "disabled": true,
       "settings": {
         "top_paragraph": "Between finding the right furniture for the right price, long shipment periods, and high delivery costs, furnishing your rental space is expensive and time-consuming.",
         "bottom_top": "Let us take the hassle off your hands.",
@@ -37,6 +38,7 @@
     },
     "1633627171dc5fbd62": {
       "type": "steps",
+      "disabled": true,
       "settings": {
         "step_one_title": "choose your package",
         "step_one_paragraph": "Choose one of our furnishing packages. For a flat fee, fill your space with modern furniture and accents. Unlike staging, the furniture is yours to keep.",
@@ -66,6 +68,7 @@
     },
     "1646165797809eff8b": {
       "type": "button-full-screen",
+      "disabled": true,
       "settings": {
         "link_label": "contact us now to get a quote",
         "url": "shopify:\/\/pages\/contact-us"
@@ -73,6 +76,7 @@
     },
     "button_full_screen_VGg7zp": {
       "type": "button-full-screen",
+      "disabled": true,
       "settings": {
         "link_label": "all furniture",
         "url": "shopify:\/\/collections\/all-furniture"
