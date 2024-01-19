@@ -38,6 +38,7 @@
     },
     "1633627171dc5fbd62": {
       "type": "steps",
+      "disabled": true,
       "settings": {
         "step_one_title": "choose your package",
         "step_one_paragraph": "Choose one of our furnishing packages. For a flat fee, fill your space with modern furniture and accents. Unlike staging, the furniture is yours to keep.",
