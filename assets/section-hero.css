@@ -6,11 +6,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: -64px;
+  margin-top: -71px;
 }
 @media screen and (min-width: 990px) {
   .hero {
-    margin-top: -84px;
+    margin-top: -105px;
   }
 }
 

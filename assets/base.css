@@ -1,6 +1,6 @@
 /* Custom Fonts */
 
-@font-face {
+/* @font-face {
   font-family: "Good Sans";
   src: url('GTFGoodSansTRIAL-Bold.otf') format('opentype');
   font-weight: bold;
@@ -23,7 +23,7 @@
   src: url('GTFGoodSansTRIAL-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 /* Color custom properties */
 html {
@@ -1874,11 +1874,12 @@ input[type='checkbox'] {
   align-items: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  background: linear-gradient(rgba(0,0,0,0.4) 0%, rgba(0,0,0,.1) 90%, rgba(0,0,0,0) 100%);
 }
 
 @media screen and (min-width: 990px) {
   .header {
-    padding-top: 2rem;
+    padding-top: 0rem;
     padding-bottom: 2rem;
   }
 
@@ -2246,6 +2247,10 @@ details[open] > .header__icon--menu .icon-hamburger {
   color: rgb(var(--color-foreground));
   text-decoration: underline;
   text-underline-offset: 0.5rem;
+}
+
+.header__submenu .header__menu-item.list-menu__item {
+  color: #363636;
 }
 
 .header__submenu {

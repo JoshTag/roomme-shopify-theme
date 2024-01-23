@@ -49,11 +49,11 @@
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
       :root {
-        --font-body-family: 'Good Sans', {{ settings.type_body_font.fallback_families }};
+        --font-body-family: {{ settings.type_body_font.family }};, {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: normal;
 
-        --font-heading-family: 'Good Sans', {{ settings.type_header_font.fallback_families }};
+        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         --font-heading-style: {{ settings.type_header_font.style }};
         --font-heading-weight: bold;
 

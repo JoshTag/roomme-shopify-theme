@@ -102,6 +102,19 @@
         </div>
       </div>
     {% endfor %}
+      <div class="product-category" data-catalog-category="upgrades">
+        <h2>test</h2>
+        {% for product_option in product.options_with_values %}
+          <li>{{ product_option.position }} - {{ product_option.name }} </li>
+        {% endfor %}
+        <select>
+          {% for value in product_option.values %}
+            <option {% if product_option.selected_value == value %}selected{% endif %}>
+              {{ value }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
     <div class="product-package__order-preview">
       <div class="product-package__order-header">
         <span>{{ product.title | upcase }} - CHOOSE YOUR ITEMS</span>
