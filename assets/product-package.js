@@ -513,9 +513,7 @@ window.onload = function () {
   enlargeBtn.forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
-      // console.log(e.target.nextElementSibling.querySelector('#zoom'))
       e.target.nextElementSibling.classList.add('active');
-      // e.target.nextElementSibling.querySelector('#zoom').classList.add('active');
       document.body.style.overflow = "hidden";
     });
   });
@@ -526,7 +524,6 @@ window.onload = function () {
       e.stopPropagation();
       e.preventDefault();
       e.target.parentElement.classList.remove('active');
-      // e.target.nextElementSibling.querySelector('#zoom').classList.remove('active');
       document.body.style.overflow = "unset";
     });
   });

@@ -1,7 +1,9 @@
 {
   "sections": {
     "package": {
-      "type": "product-package"
+      "type": "product-package",
+      "settings": {
+      }
     }
   },
   "order": [
