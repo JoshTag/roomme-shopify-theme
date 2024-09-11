@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "header": {
+      "type": "shortterm-header",
+      "settings": {
+      }
+    },
+    "hero": {
+      "type": "shortterm-hero",
+      "settings": {
+      }
+    },
+    "accordion": {
+      "type": "shortterm-accordion",
+      "settings": {
+      }
+    },
+    "columns": {
+      "type": "shortterm-columns",
+      "settings": {
+      }
+    },
+    "footer": {
+      "type": "shortterm-footer",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "header",
+    "hero",
+    "accordion",
+    "columns",
+    "footer"
+  ]
+}
